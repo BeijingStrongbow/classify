@@ -84,6 +84,24 @@
 	.container {
 		width: 1400px;
 	}
+	
+	.containerassignment {
+		width: 17em;
+		border: 2px solid #00799c;
+		border-style: none solid none none;
+	}
+	
+	.containerdate {
+		margin-left: 1.5em;
+		width: 8em;
+		border: 2px solid #00799c;
+		border-style: none solid none none;
+	}
+	
+	.containerdesc {
+		margin-left: 1.5em;
+		width: 26em;
+	}
 
 	@media screen and (min-width: 961px) and (max-width: 1880px) {
 
@@ -1607,7 +1625,8 @@
 			}
 
 	h3 {
-		font-size: 1.5em;
+		font-size: 1em;
+		text-align: left;
 	}
 
 	header {
@@ -1947,7 +1966,7 @@
 		}
 
 			.item header h3 {
-				font-size: 1em;
+				font-size: 0.7em;
 			}
 
 /* Icons */
