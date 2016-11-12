@@ -86,21 +86,21 @@
 	}
 	
 	.containerassignment {
-		width: 11em;
+		width: 20vw;
 		border: 2px solid #00799c;
 		border-style: none solid none none;
 	}
 	
 	.containerdate {
 		margin-left: 1.5em;
-		width: 7em;
+		width: 10vw;
 		border: 2px solid #00799c;
 		border-style: none solid none none;
 	}
 	
 	.containerdesc {
 		margin-left: 1.5em;
-		width: 18em;
+		width: 20vw;
 	}
 
 	@media screen and (min-width: 961px) and (max-width: 1880px) {
