@@ -14,7 +14,7 @@ public class CallJavaScript {
 		ScriptEngine scriptEngine = manager.getEngineByName("nashorn");
 		
 		try{
-			scriptEngine.eval(new FileReader("script.js"));
+			scriptEngine.eval(new FileReader("C:\\Users\\Eric\\workspace\\classify\\src\\tech\\classify\\javascript\\script.js"));
 		}
 		catch(FileNotFoundException ex){
 			System.out.println("File not found!");
