@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>classify</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/calendar.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script type="text/javascript">
+            Parse.initialize("qsJqqoI6URL9MTUSMNHfdjtz7yeVQVHTxQLyThmc", "U47TxX0ULDwFdlj25QRpGdiKTRZ0BRabN5phaYEO");
+            
+            var Points = Parse.Object.extend("Points");
+            var Homework = Parse.Object.extend("Homework");
+            
+            var points = new Points();
+            var homework = new Homework();
+            var d = new Date();
+			
+			var titals = ["aa"];
+            var dueDates = ["aa"];
+            var descriptions = ["aa"];
+			
+			var getName = ["aa"];
+            var getPoints = ["aa"];
+            
+            function updatePoints(name, points) {
+                var query = new Parse.Query(Points);
+                query.equalTo("Name", name);
+                query.find({
+                    success: function(results) {
+                        var object = results[0];
+                        object.set("Points", points);
+                        object.save();
+                    },
+                    error: function(error) {
+                        alert("Error: " + error.code + " " + error.message);
+                      }
+                });	
+            }
+            
+            function addPeople(newName, newPoints) {
+                points.set("Name", newName);
+                points.set("Points", newPoints);
+                points.save();
+            }   
+            
+            function addHomework(newTitle, newDueDate, newDescription) {
+                /* newDueDate formate: "month day time"
+                 * month is abbreviated form
+                 * day is number, if single digit number like the fith, write as 05
+                 * time is 24 hours, if single digit hour of minute like 3, write as 03
+                 */
+                homework.set("Title", newTitle);
+                homework.set("DueDate", newDueDate);
+                homework.set("Description", newDescription);
+                homework.save();
+            }
+            
+            function updateHomework(title, dueDate) {
+                //updates the Due Date of the homework
+                //for Due Date formattig see addHomework()
+                var query1 = new Parse.Query(Homework);
+                query1.equalTo("Title", title);
+                query1.find({
+                    success: function(results1) {
+                        var object1 = results1[0];
+                        object1.set("DueDate", dueDate);
+                        object1.save();
+                    },
+                    error: function(error1) {
+                        alert("Error: " + error1.code + " " + error1.message);
+                      }
+                });	
+            }
+            
+            function getHomework() {
+                var query2 = new Parse.Query(Homework);
+                query2.notEqualTo("Title", "Michael Yabuti");
+                query2.find({
+                    success: function(results2) {
+                        for (var i = 0; i < results2.length; i++) {
+                            titals[i] = results2[i].get("Title");
+                            dueDates[i] = results2[i].get("DueDate");
+                            descriptions[i] = results2[i].get("Description");
+                        }
+                    },
+                    error: function(error2) {
+                        alert("Error: " + error2.code + " " + error2.message);
+                      }
+                });	
+            }
+            
+            function getPoints() {
+                var query3 = new Parse.Query(Points);
+                query3.notEqualTo("Name", "Michael Yabuti");
+                query3.find({
+                    success: function(results3) {
+                        for (var i = 0; i < results3.length; i++) {
+                            getName[i] = results3[i].get("Name");
+                            getPoints[i] = results3[i].get("Points");
+                        }
+                    },
+                    error: function(error3) {
+                        alert("Error: " + error3.code + " " + error3.message);
+                      }
+                });	
+            }
+			function append() {
+				getHomework();
+				setTimeout(function(){ 
+					//alert('adsf');
+					for(var i = 0; i < titals.length; i++) {
+        				$(".assignments").append("<ul> <li style='float:left'><div class='containerassignment'> <h3>" + titals[i] + "</h3></div></li><li style='float:left'><div class='containerdate'><h3>" + dueDates[i] + "</h3></div></li><li style='float:left'><div class='containerdesc'><h3>" + descriptions[i] + "</h3></div></li></ul>");
+					}
+    			}, 500);
+				
+			}
+			
+			append();
+            
+            //addPeople("New Guy", 50);
+            //updatePoints("Nice Guy", 500);
+            //addHomework("HW 3", "Nov 14 03:34", "Third Homework");
+            //updateHomework("HW 3", "Nov 15 23:34");
+            //getHomework();
+            //getPoints();
+            
+            
+        </script>
+        <script type="text/javascript" src="js/appendList.js"></script>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">classify</h1>
+							<p>we're not classiFIE</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+								Prologue's nav expects links in one of two formats:
+								1. Hash link (scrolls to a different section within the page)
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+							-->
+							<ul>
+								<li><a href="#welcome" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Welcome</span></a></li>
+								<li><a href="#calendar" id="calendar-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Assignments</span></a></li>
+								<li><a href="#points" id="points-link" class="skel-layers-ignoreHref"><span class="icon fa-user">View Your Points</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">unknown</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Welcome -->
+					<section id="welcome" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Hi! Welcome to &nbsp;<i>classify</i>,&nbsp; your<br> 
+								personalized classroom management assistant.</h2>
+								<p>Use in conjunction with an Amazon Echo speaker to bring interaction<br />
+								and organization to your classroom.</p>
+							</header>
+
+							<footer>
+								<a href="#calendar" class="button scrolly">View Class Assignments</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Calendar -->
+					<section id="calendar" class="two">
+					
+						<div class="container">
+						<div class="containerAF">
+								<div class="calendar">
+									<header>	
+										<h2>Upcoming Assignments and Events</h2>									
+										
+										<!--<h2>NOVEMBER</h2>
+										<a class="btn-prev fontawesome-angle-left" href="#"></a>
+										<a class="btn-next fontawesome-angle-right" href="calendar2.html"></a> -->
+									</header>
+									<!-------------- EACH ASSIGNMENT ------------------------>
+                                    <div class="assignments">
+                                        <ul>
+                                        	<li style="float:left">
+                                            	<div class="containerassignment"> 
+                                            		<h3>Assignment</h3>
+                                                </div>
+                                            </li>
+                                            <li style="float:left">
+                                            	<div class="containerdate">
+                                                	<h3>Due Date</h3>
+                                                </div>
+                                            </li>
+                                            <li style="float:left">
+                                            	<div class="containerdesc">
+                                                	<h3>Description</h3>
+                                                </div>
+                                            </li>
+                                        </ul>
+									</div>
+								</div> <!-- end calendar -->
+							</div> <!-- end containerAF -->
+
+						</div>
+					</section>
+
+				<!-- View Your Points -->
+					<section id="points" class="three">
+						<div class="container">
+
+							<header>
+								<h2>Points Bruh</h2>
+							</header>
+
+							<p>Be good children. Earn points.</p>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact - IDK what to do with this now</h2>
+							</header>
+
+							<p>Elementum sem parturient nulla quam placerat viverra
+							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
+							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
+							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
+
+							<form method="post" action="#">
+								<div class="row">
+									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="12u$">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="12u$">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; String theory; 2016</li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

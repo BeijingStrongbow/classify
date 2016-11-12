@@ -11,6 +11,132 @@
         <link rel="stylesheet" href="assets/css/calendar.css" />
         <link rel="stylesheet" href="assets/css/oldmain.css" />
         <script defer src="packages/browser/dart.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script type="text/javascript">
+            Parse.initialize("qsJqqoI6URL9MTUSMNHfdjtz7yeVQVHTxQLyThmc", "U47TxX0ULDwFdlj25QRpGdiKTRZ0BRabN5phaYEO");
+            
+            var Points = Parse.Object.extend("Points");
+            var Homework = Parse.Object.extend("Homework");
+            
+            var points = new Points();
+            var homework = new Homework();
+            var d = new Date();
+			
+			var titals = ["aa"];
+            var dueDates = ["aa"];
+            var descriptions = ["aa"];
+			
+			var getName = ["aa"];
+            var getPoints = ["aa"];
+            
+            function updatePoints(name, points) {
+                var query = new Parse.Query(Points);
+                query.equalTo("Name", name);
+                query.find({
+                    success: function(results) {
+                        var object = results[0];
+                        object.set("Points", points);
+                        object.save();
+                    },
+                    error: function(error) {
+                        alert("Error: " + error.code + " " + error.message);
+                      }
+                });	
+            }
+            
+            function addPeople(newName, newPoints) {
+                points.set("Name", newName);
+                points.set("Points", newPoints);
+                points.save();
+            }   
+            
+            function addHomework(newTitle, newDueDate, newDescription) {
+                /* newDueDate formate: "month day time"
+                 * month is abbreviated form
+                 * day is number, if single digit number like the fith, write as 05
+                 * time is 24 hours, if single digit hour of minute like 3, write as 03
+                 */
+                homework.set("Title", newTitle);
+                homework.set("DueDate", newDueDate);
+                homework.set("Description", newDescription);
+                homework.save();
+            }
+            
+            function updateHomework(title, dueDate) {
+                //updates the Due Date of the homework
+                //for Due Date formattig see addHomework()
+                var query1 = new Parse.Query(Homework);
+                query1.equalTo("Title", title);
+                query1.find({
+                    success: function(results1) {
+                        var object1 = results1[0];
+                        object1.set("DueDate", dueDate);
+                        object1.save();
+                    },
+                    error: function(error1) {
+                        alert("Error: " + error1.code + " " + error1.message);
+                      }
+                });	
+            }
+            
+            function getHomework() {
+                var query2 = new Parse.Query(Homework);
+                query2.notEqualTo("Title", "Michael Yabuti");
+                query2.find({
+                    success: function(results2) {
+                        for (var i = 0; i < results2.length; i++) {
+                            titals[i] = results2[i].get("Title");
+                            dueDates[i] = results2[i].get("DueDate");
+                            descriptions[i] = results2[i].get("Description");
+                        }
+                    },
+                    error: function(error2) {
+                        alert("Error: " + error2.code + " " + error2.message);
+                      }
+                });	
+            }
+            
+            function getPoints() {
+                var query3 = new Parse.Query(Points);
+                query3.notEqualTo("Name", "Michael Yabuti");
+                query3.find({
+                    success: function(results3) {
+                        for (var i = 0; i < results3.length; i++) {
+                            getName[i] = results3[i].get("Name");
+                            getPoints[i] = results3[i].get("Points");
+                        }
+                    },
+                    error: function(error3) {
+                        alert("Error: " + error3.code + " " + error3.message);
+                      }
+                });	
+            }
+			function append() {
+				getHomework();
+				setTimeout(function(){ 
+					//alert('adsf');
+					for(var i = 0; i < titals.length; i++) {
+        				$(".assignments").append("<ul> <li style='float:left'><div class='containerassignment'> <h3>" + titals[i] + "</h3></div></li><li style='float:left'><div class='containerdate'><h3>" + dueDates[i] + "</h3></div></li><li style='float:left'><div class='containerdesc'><h3>" + descriptions[i] + "</h3></div></li></ul>");
+					}
+    			}, 500);
+				
+			}
+			
+			append();
+            
+            //addPeople("New Guy", 50);
+            //updatePoints("Nice Guy", 500);
+            //addHomework("HW 3", "Nov 14 03:34", "Third Homework");
+            //updateHomework("HW 3", "Nov 15 23:34");
+            //getHomework();
+            //getPoints();
+            
+            
+        </script>
+        <script type="text/javascript" src="js/appendList.js"></script>
 
 	</head>
     <body>
@@ -97,19 +223,25 @@
                             <a class="btn-next fontawesome-angle-right" href="calendar2.html"></a> -->
                         </header>
                         <!-------------- EACH ASSIGNMENT ------------------------>
-                        <ul>
-                            <li style="float:left"><div class="containerassignment">
-                                <h3>Assignment One</h3>
-                            </div></li>
-
-                            <li style="float:left"><div class="containerdate">
-                                <h3>11/12/2016</h3>
-                            </div></li>
-
-                            <li style="float:left"><div class="containerdesc">
-                                <h3>Blah blah blah blah blah</h3>
-                            </div></li>
-                        </ul>
+                        <div class="assignments">
+                            <ul>
+                                <li style="float:left">
+                                    <div class="containerassignment"> 
+                                        <h3>Assignment</h3>
+                                    </div>
+                                </li>
+                                <li style="float:left">
+                                    <div class="containerdate">
+                                        <h3>Due Date</h3>
+                                    </div>
+                                </li>
+                                <li style="float:left">
+                                    <div class="containerdesc">
+                                        <h3>Description</h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
                     </div> <!-- end calendar -->
                 </div> <!-- end containerAF -->
