@@ -2,21 +2,21 @@ import 'dart:html';
 
 class hourglass {
   CanvasElement _canvas = new CanvasElement(width: 1048, height: 600);
-  ButtonElement _submit;
+  //ButtonElement _submit;
   int points = 85;
 
   hourglass() {
-    _submit = querySelector('#viewpoints');
+    //_submit = querySelector('#viewpoints');
 
 
-    _submit.onClick.listen((_) {
+    //_submit.onClick.listen((_) {
       //document.body.append(_canvas);
       document.body.insertBefore(_canvas, querySelector('buttons'));
       _canvas.tabIndex = 1;
       _canvas.focus();
       _canvas.className = "hourglass";
       showHourglass(_canvas.context2D);
-    });
+    //});
 
   }
 

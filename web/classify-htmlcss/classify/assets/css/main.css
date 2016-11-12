@@ -10,6 +10,7 @@
 /* Reset */
 .hourglass {
     user-select: none;
+    outline: none;
 
     background-color: rgb(241, 241, 241);
     margin-left: 22.3%;
