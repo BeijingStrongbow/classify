@@ -7,8 +7,6 @@
       <excludeFolder url="file://$MODULE_DIR$/packages" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
-      <excludeFolder url="file://$MODULE_DIR$/web/Drawables/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/web/Images/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/classify/assets/css/images/ie/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/classify/assets/css/images/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/classify/assets/css/packages" />
@@ -21,10 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/classify/images/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/classify/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/tech/classify/java/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/tech/classify/javascript/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/tech/classify/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/tech/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/classify-htmlcss/twilio/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/packages" />
     </content>
     <orderEntry type="inheritedJdk" />
