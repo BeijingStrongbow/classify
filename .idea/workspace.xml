@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43bd2033-25f5-4b0d-a1fb-07481460afdd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/classify-htmlcss/classify/images/hourglassOutline.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.pub/transformers/manifest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.pub/transformers/transformers.snapshot" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/classify.iml" afterPath="$PROJECT_DIR$/.idea/classify.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.packages" afterPath="$PROJECT_DIR$/.packages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pubspec.lock" afterPath="$PROJECT_DIR$/pubspec.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/classify-htmlcss/classify/index.html" afterPath="$PROJECT_DIR$/web/classify-htmlcss/classify/index.html" />
     </list>
     <ignored path="classify.iws" />
@@ -44,15 +38,25 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="318" column="44" selection-start-line="318" selection-start-column="44" selection-end-line="318" selection-end-column="44" />
+            <state relative-caret-position="200">
+              <caret line="285" column="56" selection-start-line="285" selection-start-column="56" selection-end-line="285" selection-end-column="56" />
               <folding>
-                <marker date="1478988187227" expanded="true" signature="5347:5357" ph="..." />
-                <marker date="1478988187227" expanded="true" signature="5441:5451" ph="..." />
-                <marker date="1478988187227" expanded="true" signature="5530:5540" ph="..." />
-                <marker date="1478988187227" expanded="true" signature="5856:5866" ph="..." />
-                <marker date="1478988187227" expanded="true" signature="5944:5954" ph="..." />
+                <marker date="1478990989223" expanded="true" signature="5347:5357" ph="..." />
+                <marker date="1478990989223" expanded="true" signature="5441:5451" ph="..." />
+                <marker date="1478990989223" expanded="true" signature="5530:5540" ph="..." />
+                <marker date="1478990989223" expanded="true" signature="5856:5866" ph="..." />
+                <marker date="1478990989223" expanded="true" signature="5944:5954" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="oldmain.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/assets/css/oldmain.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -433,7 +437,7 @@
       <workItem from="1478930465439" duration="14443000" />
       <workItem from="1478968203648" duration="1544000" />
       <workItem from="1478972137618" duration="16000" />
-      <workItem from="1478987519872" duration="678000" />
+      <workItem from="1478987519872" duration="3455000" />
     </task>
     <servers />
   </component>
@@ -452,7 +456,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16861000" />
+    <option name="totallyTimeSpent" value="19638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -464,19 +468,19 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Dart Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0883797" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Pub Serve" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0883797" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -659,14 +663,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/main.dart" />
-    <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/hourglass.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -675,16 +671,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/assets/css/oldmain.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="318" column="44" selection-start-line="318" selection-start-column="44" selection-end-line="318" selection-end-column="44" />
+        <state relative-caret-position="200">
+          <caret line="285" column="56" selection-start-line="285" selection-start-column="56" selection-end-line="285" selection-end-column="56" />
           <folding>
-            <marker date="1478988187227" expanded="true" signature="5347:5357" ph="..." />
-            <marker date="1478988187227" expanded="true" signature="5441:5451" ph="..." />
-            <marker date="1478988187227" expanded="true" signature="5530:5540" ph="..." />
-            <marker date="1478988187227" expanded="true" signature="5856:5866" ph="..." />
-            <marker date="1478988187227" expanded="true" signature="5944:5954" ph="..." />
+            <marker date="1478990989223" expanded="true" signature="5347:5357" ph="..." />
+            <marker date="1478990989223" expanded="true" signature="5441:5451" ph="..." />
+            <marker date="1478990989223" expanded="true" signature="5530:5540" ph="..." />
+            <marker date="1478990989223" expanded="true" signature="5856:5866" ph="..." />
+            <marker date="1478990989223" expanded="true" signature="5944:5954" ph="..." />
           </folding>
         </state>
       </provider>
