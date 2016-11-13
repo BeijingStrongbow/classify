@@ -282,7 +282,7 @@
                                     </ul>
                                 </div>-->
                 <div>
-                    <canvas id="myCanvas" width="1048" height="700">
+                    <canvas id="myCanvas" width="1048" height="800"; z-index= 1;>
                         <script type="text/javascript" src="canvas.js"></script>
                         <script type="text/javascript">
                             var canvas = document.getElementById('myCanvas'),
@@ -292,38 +292,81 @@
                             hourglassOutline.src = "images/hourglassOutline.png"
                             context.drawImage(hourglassOutline,50,100);
 
-                            context.font = '30pt Kozuka Gothic Pr6N EL, sans-serif';
-                            context.fillText('                Mrs. Smith\'s 3rd Grade Class', 50, 50);
+                            context.font = '2em Source Sans Pro Light';
+                            context.fillText('              Ray Bradbury\'s 3rd Grade Class', 50, 50);
 
 
 
                                 hourglassOutline.onload = function () {
                                     setTimeout(function(){
-                                    for (var i = 0; i < 15; i++) {
-                                        if (i % 5 == 0) {
-                                            context.drawImage(hourglassOutline, 100, (i * 40) + 120);
-                                            context.strokeText(getName[i], 100, (i * 40) + 170);
-                                        } else if (i % 5 == 1) {
-                                            context.drawImage(hourglassOutline, 275, (i * 40) + 80);
-                                        } else if (i % 5 == 2) {
-                                            context.drawImage(hourglassOutline, 450, (i * 40) + 40);
-                                        } else if (i % 5 == 3) {
-                                            context.drawImage(hourglassOutline, 625, (i * 40) + 0);
-                                        } else if (i % 5 == 4) {
-                                            context.drawImage(hourglassOutline, 800, (i * 40) - 40);
+                                        //alert(getName.length);
+                                        for (var i = 1; i < getName.length; i++) {
+                                            if (i % 5 == 1) {
+                                                context.drawImage(hourglassOutline, 175, (i * 40) + 120);
+                                                context.font = '.8em Source Sans Pro Light';
+                                                context.textAlign="center";
+                                                context.fillText(getName[i], 201, (i * 40) + 245);
+                                                context.fillText(getPoints[i], 201, (i * 40) + 270);
+
+                                            } else if (i % 5 == 2) {
+                                                context.drawImage(hourglassOutline, 340, (i * 40) + 80);
+                                                context.font = '.8em Source Sans Pro Light';
+                                                context.textAlign="center";
+                                                context.fillText(getName[i], 377, (i * 40) + 205);
+                                                context.fillText(getPoints[i], 377, (i * 40) + 230);
+                                            } else if (i % 5 == 3) {
+                                                context.drawImage(hourglassOutline, 525, (i * 40) + 40);
+                                                context.font = '.8em Source Sans Pro Light';
+                                                context.textAlign="center";
+                                                context.fillText(getName[i], 553, (i * 40) + 165);
+                                                context.fillText(getPoints[i], 553, (i * 40) + 190);
+                                            } else if (i % 5 == 4) {
+                                                context.drawImage(hourglassOutline, 700, (i * 40) + 0);
+                                                context.font = '.8em Source Sans Pro Light';
+                                                context.textAlign="center";
+                                                context.fillText(getName[i], 727, (i * 40) + 125);
+                                                context.fillText(getPoints[i], 727, (i * 40) + 150);
+                                            } /*else if (i % 6 == 5) {
+                                                context.drawImage(hourglassOutline, 800, (i * 40) - 40);
+                                                context.font = '.8em Source Sans Pro Light';
+                                                context.textAlign="center";
+                                                context.fillText(getName[i], 828, (i * 40) + 85);
+                                                context.fillText(getPoints[i], 828, (i * 40) + 110);
+                                            }*/
                                         }
-                                        /*else if (i % 6 == 5) {
-                                         context.drawImage(hourglassOutline, 850, (i * 25) + -25);
-                                         }*/
-                                    }
                                     }, 800);
+
+
+                                }
+
+                        </script>
+                    </canvas>
+                    <canvas id="myCanvas2" width="1048" height="800" style="position: absolute; left: 0; top: 0; z-index: 2;">
+                        <script>
+                            var canvas2 = document.getElementById('myCanvas2'), context2 = canvas.getContext('2d');
+
+                            //sand
+                            setTimeout(function(){
+                                for (var i = 0; i < getName.length; i++) {
+                                    if (i % 5 == 0) {
+                                        context.stroke();
+                                        context.beginPath(); //roof
+                                        context.moveTo(100, 200);
+                                        context.lineTo(150, 130);
+                                        context.lineTo(200, 200);
+                                        context.lineTo(100, 200);
+                                        context.closePath();
+                                    } else if (i % 5 == 1) {
+
+                                    } else if (i % 5 == 2) {
+
+                                    } else if (i % 5 == 3) {
+
+                                    } else if (i % 5 == 4) {
+
                                     }
-
-
-
-
-                            
-                            
+                                }
+                            }, 800);
                         </script>
                     </canvas>
                     
