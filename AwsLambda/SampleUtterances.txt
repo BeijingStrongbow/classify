@@ -1,98 +1,37 @@
-AddPoints give {Tyler|StudentName} {Points} points
-AddPoints give {Nolan|StudentName} {Points} points
-AddPoints give {Eric|StudentName} {Points} points
-AddPoints give {Stephanie|StudentName} {Points} points
-AddPoints give {Luann|StudentName} {Points} points
-AddPoints give {David|StudentName} {Points} points
-AddPoints give {Owen|StudentName} {Points} points
-AddPoints give {Tony|StudentName} {Points} points
-AddPoints give {Jamie|StudentName} {Points} points
-AddPoints give {Emily|StudentName} {Points} points
-AddPoints give {Molly|StudentName} {Points} points
-AddPoints give {Dan|StudentName} {Points} points
-AddPoints give {Caroline|StudentName} {Points} points
-AddPoints give {Anna|StudentName} {Points} points
-AddPoints give {Logan|StudentName} {Points} points
+AddPoints give {StudentName} {Points} points
 
-AddPoints give {Points} points to {Tyler|StudentName}
-AddPoints give {Points} points to {Nolan|StudentName}
-AddPoints give {Points} points to {Eric|StudentName}
-AddPoints give {Points} points to {Stephanie|StudentName}
-AddPoints give {Points} points to {Luann|StudentName} 
-AddPoints give {Points} points to {David|StudentName}
-AddPoints give {Points} points to {Owen|StudentName}
-AddPoints give {Points} points to {Tony|StudentName}
-AddPoints give {Points} points to {Jamie|StudentName}
-AddPoints give {Points} points to {Emily|StudentName}
-AddPoints give {Points} points to {Molly|StudentName}
-AddPoints give {Points} points to {Dan|StudentName}
-AddPoints give {Points} points to {Caroline|StudentName}
-AddPoints give {Points} points to {Anna|StudentName} 
-AddPoints give {Points} points to {Logan|StudentName}
+AddPoints give {Points} points to {StudentName}
 
-RemovePoints remove {Points} points from {Tyler|StudentName}
-RemovePoints remove {Points} points from {Nolan|StudentName}
-RemovePoints remove {Points} points from {Eric|StudentName}
-RemovePoints remove {Points} points from {Stephanie|StudentName}
-RemovePoints remove {Points} points from {Caroline|StudentName}
-RemovePoints remove {Points} points from {Anna|StudentName}
-RemovePoints remove {Points} points from {Luann|StudentName}
-RemovePoints remove {Points} points from {David|StudentName}
-RemovePoints remove {Points} points from {Owen|StudentName}
-RemovePoints remove {Points} points from {Tony|StudentName}
-RemovePoints remove {Points} points from {Logan|StudentName}
-RemovePoints remove {Points} points from {Molly|StudentName}
-RemovePoints remove {Points} points from {Jamie|StudentName}
-RemovePoints remove {Points} points from {Emily|StudentName}
-RemovePoints remove {Points} points from {Dan|StudentName}
+AddPoints add {Points} points to {StudentName}
 
-RemovePoints subtract {Points} points from {Tyler|StudentName}
-RemovePoints subtract {Points} points from {Nolan|StudentName}
-RemovePoints subtract {Points} points from {Eric|StudentName}
-RemovePoints subtract {Points} points from {Stephanie|StudentName}
-RemovePoints subtract {Points} points from {Caroline|StudentName}
-RemovePoints subtract {Points} points from {Anna|StudentName}
-RemovePoints subtract {Points} points from {Luann|StudentName}
-RemovePoints subtract {Points} points from {David|StudentName}
-RemovePoints subtract {Points} points from {Owen|StudentName}
-RemovePoints subtract {Points} points from {Tony|StudentName}
-RemovePoints subtract {Points} points from {Logan|StudentName}
-RemovePoints subtract {Points} points from {Molly|StudentName}
-RemovePoints subtract {Points} points from {Jamie|StudentName}
-RemovePoints subtract {Points} points from {Emily|StudentName}
-RemovePoints subtract {Points} points from {Dan|StudentName}
+AddPoints add {Points} points
+AddPoints add {Points}
+AddPoints give to {StudentName}
 
-RemovePoints take {Points} points from {Owen|StudentName}
-RemovePoints take {Points} points from {Tony|StudentName}
-RemovePoints take {Points} points from {Jamie|StudentName}
-RemovePoints take {Points} points from {Molly|StudentName}
-RemovePoints take {Points} points from {Emily|StudentName}
-RemovePoints take {Points} points from {Dan|StudentName}
-RemovePoints take {Points} points from {Caroline|StudentName}
-RemovePoints take {Points} points from {Nolan|StudentName}
-RemovePoints take {Points} points from {Luann|StudentName}
-RemovePoints take {Points} points from {Stephanie|StudentName}
-RemovePoints take {Points} points from {David|StudentName}
-RemovePoints take {Points} points from {Logan|StudentName}
-RemovePoints take {Points} points from {Anna|StudentName}
-RemovePoints take {Points} points from {Tyler|StudentName}
-RemovePoints take {Points} points from {Eric|StudentName}
+AddPoints give {Points} points
+AddPoints give {Points}
+AddPoints give {StudentName}
 
-RemovePoints take {Points} points away from {Owen|StudentName}
-RemovePoints take {Points} points away from {Tony|StudentName}
-RemovePoints take {Points} points away from {Jamie|StudentName}
-RemovePoints take {Points} points away from {Molly|StudentName}
-RemovePoints take {Points} points away from {Emily|StudentName}
-RemovePoints take {Points} points away from {Dan|StudentName}
-RemovePoints take {Points} points away from {Caroline|StudentName}
-RemovePoints take {Points} points away from {Nolan|StudentName}
-RemovePoints take {Points} points away from {Luann|StudentName}
-RemovePoints take {Points} points away from {Stephanie|StudentName}
-RemovePoints take {Points} points away from {David|StudentName}
-RemovePoints take {Points} points away from {Logan|StudentName}
-RemovePoints take {Points} points away from {Anna|StudentName}
-RemovePoints take {Points} points away from {Tyler|StudentName}
-RemovePoints take {Points} points away from {Eric|StudentName}
+RemovePoints remove {Points} points from {StudentName}
+
+RemovePoints subtract {Points} points from {StudentName}
+
+RemovePoints take {Points} points from {StudentName}
+
+RemovePoints take {Points} points away from {StudentName}
+
+RemovePoints take {Points} points
+RemovePoints take {Points}
+
+RemovePoints remove {Points} points
+RemovePoints remove {Points}
+
+RemovePoints subtract {Points} points
+RemovePoints subtract {Points}
+
+RemovePoints take from {StudentName}
+RemovePoints subtract from {StudentName}
+RemovePoints remove from {StudentName}
 
 AddAssignment add {test five|AssignmentName} on {DueDate} at {DueTime}
 AddAssignment add {read chapter three|AssignmentName} on {DueDate} at {DueTime}
@@ -202,3 +141,39 @@ AddAssignment add {chapter three though six due|AssignmentName} at {DueTime} on 
 AddAssignment add {homework problems nine to twenty due|AssignmentName} at {DueTime} on {DueDate}
 AddAssignment add {take home test due|AssignmentName} at {DueTime} on {DueDate}
 AddAssignment add {homework problems five through thirty two due|AssignmentName} at {DueTime} on {DueDate}
+
+AddAssignment add {test five|AssignmentName}
+AddAssignment add {read chapter three|AssignmentName}
+AddAssignment add {read chapter thirteen through eighteen|AssignmentName}
+AddAssignment add {finish project|AssignmentName}
+AddAssignment add {do problems forty through fifty|AssignmentName}
+AddAssignment add {problems seventy two through eighty six even|AssignmentName}
+AddAssignment add {do problems eleven through thirty three odd|AssignmentName}
+AddAssignment add {read pages one through one hundred|AssignmentName}
+AddAssignment add {quiz over chapter twelve|AssignmentName}
+AddAssignment add {project due|AssignmentName}
+AddAssignment add {test|AssignmentName}
+AddAssignment add {project|AssignmentName}
+AddAssignment add {quiz|AssignmentName}
+AddAssignment add {do problems five to ten|AssignmentName}
+AddAssignment add {problems three to eleven|AssignmentName}
+AddAssignment add {do problems thirteen to fifty odd|AssignmentName}
+AddAssignment add {problem three eight nine fifteen and eighteen|AssignmentName}
+AddAssignment add {do problem seventy two eighty three eighty four and ninety five|AssignmentName}
+AddAssignment add {test four|AssignmentName}
+AddAssignment add {quiz two| AssignmentName}
+AddAssignment add {test two|AssignmentName}
+AddAssignment add {quiz|AssignmentName}
+AddAssignment add {quiz four|AssignmentName}
+AddAssignment add {quiz one|AssignmentName}
+AddAssignment add {quiz chapter three and four|AssignmentName}
+AddAssignment add {quiz section one and two|AssignmentName}
+AddAssignment add {homework two|AssignmentName}
+AddAssignment add {homework four|AssignmentName}
+AddAssignment add {homework thirty|AssignmentName}
+AddAssignment add {homework chapter two to four|AssignmentName}
+AddAssignment add {homework section four to seven|AssignmentName}
+AddAssignment add {chapter three though six due|AssignmentName}
+AddAssignment add {homework problems nine to twenty due|AssignmentName}
+AddAssignment add {take home test due|AssignmentName}
+AddAssignment add {homework problems five through thirty two due|AssignmentName}
