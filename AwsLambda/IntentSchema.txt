@@ -62,6 +62,15 @@
     },
     {
       "intent": "GreatestPoints"
+    },
+    {
+      "intent": "GetPoints",
+      "slots": [
+        {
+          "name": "StudentName",
+          "type": "STUDENTS"
+        }
+      ]
     }
   ]
 }

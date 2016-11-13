@@ -14,7 +14,8 @@ public class ParseHandler {
     	int points = 0;
 		
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Points");
-    	query.whereEqualTo("Name", name.substring(0, 1).toUpperCase() + name.substring(1));
+		name = name.substring(0,1).toUpperCase() + name.substring(1);
+    	query.whereEqualTo("Name", name);
     	List<ParseObject> person;
     	try {
     		person = query.find();
@@ -47,7 +48,8 @@ public class ParseHandler {
     	int points = 0;
 		
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Points");
-    	query.whereEqualTo("Name", name.substring(0, 1).toUpperCase() + name.substring(1));
+		name = name.substring(0,1).toUpperCase() + name.substring(1);
+    	query.whereEqualTo("Name", name);
     	List<ParseObject> person;
 
     	try {
@@ -147,6 +149,24 @@ public class ParseHandler {
 		}
 	}
 	
+	public static int getPoints(String name){
+		Parse.initialize("qsJqqoI6URL9MTUSMNHfdjtz7yeVQVHTxQLyThmc", "YUtYFESPDjjFtgp5eMgvdLh1p2vvMVjXcxIpTxBF");
+
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Points");
+		name = name.substring(0,1).toUpperCase() + name.substring(1);
+		query.whereEqualTo("Name", name);
+		
+		List<ParseObject> student;
+		try{
+			student = query.find();
+			
+			return student.get(0).getInt("Points");
+		}
+		catch (org.parse4j.ParseException ex){
+			return 0;
+		}
+	}
+	
 	private static String processAssignmentName(String name){
 		StringBuilder output = new StringBuilder();
 		String[] input = name.split(" ");
@@ -221,5 +241,52 @@ public class ParseHandler {
 			}
 		}
 		return output.toString();
+	}
+	
+	public static String getGreatestPoints(){
+		Parse.initialize("qsJqqoI6URL9MTUSMNHfdjtz7yeVQVHTxQLyThmc", "YUtYFESPDjjFtgp5eMgvdLh1p2vvMVjXcxIpTxBF");
+
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Points");
+    	query.whereNotEqualTo("Points", -1);
+    	List<ParseObject> students;
+		
+		int max = 0;
+		List<String> maxNames = new ArrayList<String>();
+		int p;
+		try{
+			students = query.find();
+			for(int i = 0; i < students.size(); i++){
+				p = students.get(i).getInt("Points");
+				if(p > max){
+					max = p;
+					maxNames.clear();
+					maxNames.add((String) students.get(i).get("Name"));
+				}
+				else if(p == max){
+					maxNames.add((String) students.get(i).get("Name"));
+				}
+			}
+		}
+		catch(org.parse4j.ParseException ex){
+			return "there was an exception";
+		}
+		
+		if(maxNames.size() == 1){
+			return maxNames.get(0) + " has the most points, with " + max;
+		}
+		else{
+			StringBuilder message = new StringBuilder();
+			for(int i = 0; i < maxNames.size(); i++){
+				if(i != maxNames.size() - 1){
+					message.append(maxNames.get(i) + ", ");
+				}
+				else{
+					message.append("and " + maxNames.get(i));
+				}
+			}
+			 
+			message.append(" have the most points, with" + max);
+			return message.toString();
+		}
 	}
 }

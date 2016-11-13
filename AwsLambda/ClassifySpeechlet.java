@@ -45,11 +45,13 @@ public class ClassifySpeechlet implements Speechlet{
 			if(i.getSlot("AssignmentName").getValue() != null && session.getAttribute("AssignmentName") == null){session.setAttribute("AssignmentName", i.getSlot("AssignmentName").getValue());}
 			if(i.getSlot("DueDate").getValue() != null && session.getAttribute("DueDate") == null){session.setAttribute("DueDate", i.getSlot("DueDate").getValue());}
 			if(i.getSlot("DueTime").getValue() != null && session.getAttribute("DueTime") == null){session.setAttribute("DueTime", i.getSlot("DueTime").getValue());}
-			if(i.getSlot("PromptTime").getValue() != null && session.getAttribute("PromptTime") == null){session.setAttribute("PromptTime", i.getSlot("PromptTime").getValue());}
 		}
 		else if(i.getName().equals("RemoveAssignment")){
 			if(i.getSlot("AssignmentName").getValue() != null && session.getAttribute("AssignmentName") == null){session.setAttribute("AssignmentName", i.getSlot("AssignmentName").getValue());}
-			if(i.getSlot("Confirm").getValue() != null && session.getAttribute("Confirm") == null){session.setAttribute("Confirm", i.getSlot("Confirm").getValue());}
+		}
+		else if(i.getName().equals("GetPoints")){
+			if(i.getSlot("StudentName").getValue() != null && session.getAttribute("StudentName") == null){session.setAttribute("StudentName", i.getSlot("StudentName").getValue());}
+
 		}
 		
 		if(i.getName() != null){
@@ -106,7 +108,14 @@ public class ClassifySpeechlet implements Speechlet{
 				response.setOutputSpeech(output);
 				return response;
 			}
-			
+			else if(session.getAttribute("IntentName").equals("GreatestPoints")){
+				String student = ParseHandler.getGreatestPoints();
+				output.setText(student);
+			}
+			else if(session.getAttribute("IntentName").equals("GetPoints")){
+				int points = ParseHandler.getPoints((String) session.getAttribute("StudentName"));
+				output.setText(session.getAttribute("StudentName") + " has " + points + " points");
+			}
 			else if(session.getAttribute("IntentName").equals("AddAssignment")){
 				String date = (String) session.getAttribute("DueDate");
 				String name = (String) session.getAttribute("AssignmentName");
