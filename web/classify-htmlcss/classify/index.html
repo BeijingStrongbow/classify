@@ -294,291 +294,302 @@
                     <canvas id="myCanvas" width="1048" height="800"; z-index= 2;>
                         <script type="text/javascript" src="canvas.js"></script>
                         <script type="text/javascript">
+                            function drawShell(image, j, nameY, outlineX, outlineYAdd) {
+                                context.drawImage(image, outlineX, (j * 40) + outlineYAdd, 55, 93);
+                                context.font = '.8em Source Sans Pro';
+                                context.textAlign="center";
+                                context.fillStyle = "#666";
+                                context.fillText(getName[i], outlineX + 30, (j * 40) + nameY);
+                                context.fillText(getPoints[i], outlineX + 30, (j * 40) + nameY+25);
+                            }
+
                             var canvas = document.getElementById('myCanvas'),
                             context = canvas.getContext('2d');
 
                             var hourglassOutline = new Image();
-                            hourglassOutline.src = "images/hourglassOutline.png"
-                            context.drawImage(hourglassOutline,50,100);
+                            hourglassOutline.src = "images/hourglassOutlineM.png"
+
 
                             context.font = '300 2em Source Sans Pro';
 							context.fillStyle = "#666";
                             context.fillText('               Ray Bradbury\'s 3rd Grade Class', 50, 50);
 
-
-
                                 hourglassOutline.onload = function () {
                                     setTimeout(function(){
+
                                         //alert(getName.length);
-                                        for (var i = 1; i < getName.length; i++) {
-                                            if (i % 5 == 1) {
-                                                context.drawImage(hourglassOutline, 95, (i * 40) + 120);
+                                        for (var i = 0; i < getName.length; i++) {
+                                            if (i % 5 == 0) {
+                                                drawShell(hourglassOutline, i, 245, 95, 120);
+                                                /*context.drawImage(hourglassOutline, 95, (i * 40) + 120, 55, 93);
                                                 context.font = '.8em Source Sans Pro';
                                                 context.textAlign="center";
 												context.fillStyle = "#666";
-                                                context.fillText(getName[i], 121, (i * 40) + 245);
-                                                context.fillText(getPoints[i], 121, (i * 40) + 270);
+                                                context.fillText(getName[i], 125, (i * 40) + 245);
+                                                context.fillText(getPoints[i], 125, (i * 40) + 270);*/
+                                                //context.fillText(i, 110, (i * 40) + 270);
 
-                                            } else if (i % 5 == 2) {
-                                                context.drawImage(hourglassOutline, 260, (i * 40) + 80);
+                                            } else if (i % 5 == 1) {
+                                                drawShell(hourglassOutline, i, 205, 260, 80);
+                                                /*context.drawImage(hourglassOutline, 260, (i * 40) + 80);
                                                 context.font = '.8em Source Sans Pro';
                                                 context.textAlign="center";
 												context.fillStyle = "#666";
                                                 context.fillText(getName[i], 290, (i * 40) + 205);
-                                                context.fillText(getPoints[i], 290, (i * 40) + 230);
-                                            } else if (i % 5 == 3) {
+                                                context.fillText(getPoints[i], 290, (i * 40) + 230);*/
+                                            } else if (i % 5 == 2) {
                                                 context.drawImage(hourglassOutline, 445, (i * 40) + 40);
                                                 context.font = '.8em Source Sans Pro';
                                                 context.textAlign="center";
 												context.fillStyle = "#666";
                                                 context.fillText(getName[i], 473, (i * 40) + 165);
                                                 context.fillText(getPoints[i], 473, (i * 40) + 190);
-                                            } else if (i % 5 == 4) {
+                                            } else if (i % 5 == 3) {
                                                 context.drawImage(hourglassOutline, 620, (i * 40) + 0);
                                                 context.font = '.8em Source Sans Pro';
                                                 context.textAlign="center";
 												context.fillStyle = "#666";
-                                                context.fillText(getName[i], 647, (i * 40) + 125);
-                                                context.fillText(getPoints[i], 647, (i * 40) + 150);
-                                            } else if (i % 5 == 0) {
+                                                context.fillText(getName[i], 650, (i * 40) + 125);
+                                                context.fillText(getPoints[i], 650, (i * 40) + 150);
+                                            } else if (i % 5 == 4 ) {
                                                 context.drawImage(hourglassOutline, 795, (i * 40) - 40);
                                                 context.font = '.8em Source Sans Pro';
                                                 context.textAlign="center";
 												context.fillStyle = "#666";
-                                                context.fillText(getName[i], 822, (i * 40) + 85);
-                                                context.fillText(getPoints[i], 822, (i * 40) + 110);
+                                                context.fillText(getName[i], 815, (i * 40) + 85);
+                                                context.fillText(getPoints[i], 815, (i * 40) + 110);
                                             }
                                         }
                                     }, 800);
                                 }
 
-                            var canvas2 = document.getElementById('myCanvas'), context2 = canvas.getContext('2d');
+                            var canvas = document.getElementById('myCanvas'), context = canvas.getContext('2d');
                             //sand BOTTOM
                             setTimeout(function(){
 
-                                for (var i = 1; i < getName.length; i++) {
-                                    if (i % 5 == 1) {
-                                        if (i == 1) {
-                                            context2.beginPath();
-                                            context2.moveTo(97, 253);
-                                            context2.lineTo(122.5, 253-(getPoints[i]*.42));
-                                            context2.lineTo(148, 253);
-                                            context2.lineTo(97, 253);
-                                        } else if (i == 6) {
-                                            context2.beginPath();
-                                            context2.moveTo(97, 453);
-                                            context2.lineTo(122.5, 453-(getPoints[i]*.42));
-                                            context2.lineTo(148, 453);
-                                            context2.lineTo(97, 453);
-                                        } else if (i == 11) {
-                                            context2.beginPath();
-                                            context2.moveTo(97, 653);
-                                            context2.lineTo(122.5, 653-(getPoints[i]*.42));
-                                            context2.lineTo(148, 653);
-                                            context2.lineTo(97, 653);
+                                for (var i = 0; i < getName.length; i++) {
+                                    if (i % 5 == 0) {
+                                        if (i == 0) {
+                                            context.beginPath();
+                                            context.moveTo(97, 253);
+                                            context.lineTo(122.5, 253-(getPoints[i]*.42));
+                                            context.lineTo(148, 253);
+                                            context.lineTo(97, 253);
+                                        } else if (i == 5) {
+                                            context.beginPath();
+                                            context.moveTo(97, 453);
+                                            context.lineTo(122.5, 453-(getPoints[i]*.42));
+                                            context.lineTo(148, 453);
+                                            context.lineTo(97, 453);
+                                        } else if (i == 10) {
+                                            context.beginPath();
+                                            context.moveTo(97, 653);
+                                            context.lineTo(122.5, 653-(getPoints[i]*.42));
+                                            context.lineTo(148, 653);
+                                            context.lineTo(97, 653);
                                         }
 
+                                    } else if (i % 5 == 1) {
+                                        if (i == 1) {
+                                            context.beginPath();
+                                            context.moveTo(262, 253);
+                                            context.lineTo(287.5, 253-(getPoints[i]*.42));
+                                            context.lineTo(314, 253);
+                                            context.lineTo(252, 253);
+                                        } else if (i == 6) {
+                                            context.beginPath();
+                                            context.moveTo(262, 453);
+                                            context.lineTo(287.5, 453-(getPoints[i]*.42));
+                                            context.lineTo(314, 453);
+                                            context.lineTo(252, 453);
+                                        } else if (i == 11) {
+                                            context.beginPath();
+                                            context.moveTo(262, 653);
+                                            context.lineTo(287.5, 653-(getPoints[i]*.42));
+                                            context.lineTo(314, 653);
+                                            context.lineTo(252, 653);
+                                        }
                                     } else if (i % 5 == 2) {
                                         if (i == 2) {
-                                            context2.beginPath();
-                                            context2.moveTo(262, 253);
-                                            context2.lineTo(287.5, 253-(getPoints[i]*.42));
-                                            context2.lineTo(314, 253);
-                                            context2.lineTo(252, 253);
+                                            context.beginPath();
+                                            context.moveTo(447, 253);
+                                            context.lineTo(472.5, 253-(getPoints[i]*.42));
+                                            context.lineTo(498, 253);
+                                            context.lineTo(437, 253);
                                         } else if (i == 7) {
-                                            context2.beginPath();
-                                            context2.moveTo(262, 453);
-                                            context2.lineTo(287.5, 453-(getPoints[i]*.42));
-                                            context2.lineTo(314, 453);
-                                            context2.lineTo(252, 453);
+                                            context.beginPath();
+                                            context.moveTo(447, 453);
+                                            context.lineTo(472.5, 453-(getPoints[i]*.42));
+                                            context.lineTo(498, 453);
+                                            context.lineTo(437, 453);
                                         } else if (i == 12) {
-                                            context2.beginPath();
-                                            context2.moveTo(262, 653);
-                                            context2.lineTo(287.5, 653-(getPoints[i]*.42));
-                                            context2.lineTo(314, 653);
-                                            context2.lineTo(252, 653);
+                                            context.beginPath();
+                                            context.moveTo(447, 653);
+                                            context.lineTo(472.5, 653-(getPoints[i]*.42));
+                                            context.lineTo(498, 653);
+                                            context.lineTo(437, 653);
                                         }
                                     } else if (i % 5 == 3) {
                                         if (i == 3) {
-                                            context2.beginPath();
-                                            context2.moveTo(447, 253);
-                                            context2.lineTo(472.5, 253-(getPoints[i]*.42));
-                                            context2.lineTo(498, 253);
-                                            context2.lineTo(437, 253);
+                                            context.beginPath();
+                                            context.moveTo(622, 253);
+                                            context.lineTo(647.5, 253-(getPoints[i]*.42));
+                                            context.lineTo(673, 253);
+                                            context.lineTo(612, 253);
                                         } else if (i == 8) {
-                                            context2.beginPath();
-                                            context2.moveTo(447, 453);
-                                            context2.lineTo(472.5, 453-(getPoints[i]*.42));
-                                            context2.lineTo(498, 453);
-                                            context2.lineTo(437, 453);
+                                            context.beginPath();
+                                            context.moveTo(622, 453);
+                                            context.lineTo(647.5, 453-(getPoints[i]*.42));
+                                            context.lineTo(673, 453);
+                                            context.lineTo(612, 453);
                                         } else if (i == 13) {
-                                            context2.beginPath();
-                                            context2.moveTo(447, 653);
-                                            context2.lineTo(472.5, 653-(getPoints[i]*.42));
-                                            context2.lineTo(498, 653);
-                                            context2.lineTo(437, 653);
+                                            context.beginPath();
+                                            context.moveTo(622, 653);
+                                            context.lineTo(647.5, 653-(getPoints[i]*.42));
+                                            context.lineTo(673, 653);
+                                            context.lineTo(612, 653);
                                         }
                                     } else if (i % 5 == 4) {
                                         if (i == 4) {
-                                            context2.beginPath();
-                                            context2.moveTo(622, 253);
-                                            context2.lineTo(647.5, 253-(getPoints[i]*.42));
-                                            context2.lineTo(673, 253);
-                                            context2.lineTo(612, 253);
+                                            context.beginPath();
+                                            context.moveTo(797, 253);
+                                            context.lineTo(822.5, 253-(getPoints[i]*.42));
+                                            context.lineTo(848, 253);
+                                            context.lineTo(787, 253);
                                         } else if (i == 9) {
-                                            context2.beginPath();
-                                            context2.moveTo(622, 453);
-                                            context2.lineTo(647.5, 453-(getPoints[i]*.42));
-                                            context2.lineTo(673, 453);
-                                            context2.lineTo(612, 453);
+                                            context.beginPath();
+                                            context.moveTo(797, 453);
+                                            context.lineTo(822.5, 453-(getPoints[i]*.42));
+                                            context.lineTo(848, 453);
+                                            context.lineTo(787, 453);
                                         } else if (i == 14) {
-                                            context2.beginPath();
-                                            context2.moveTo(622, 653);
-                                            context2.lineTo(647.5, 653-(getPoints[i]*.42));
-                                            context2.lineTo(673, 653);
-                                            context2.lineTo(612, 653);
-                                        }
-                                    } else if (i % 5 == 0) {
-                                        if (i == 5) {
-                                            context2.beginPath();
-                                            context2.moveTo(797, 253);
-                                            context2.lineTo(822.5, 253-(getPoints[i]*.42));
-                                            context2.lineTo(848, 253);
-                                            context2.lineTo(787, 253);
-                                        } else if (i == 10) {
-                                            context2.beginPath();
-                                            context2.moveTo(797, 453);
-                                            context2.lineTo(822.5, 453-(getPoints[i]*.42));
-                                            context2.lineTo(848, 453);
-                                            context2.lineTo(787, 453);
-                                        } else if (i == 15) {
-                                            context2.beginPath();
-                                            context2.moveTo(797, 653);
-                                            context2.lineTo(822.5, 653-(getPoints[i]*.42));
-                                            context2.lineTo(848, 653);
-                                            context2.lineTo(787, 653);
+                                            context.beginPath();
+                                            context.moveTo(797, 653);
+                                            context.lineTo(822.5, 653-(getPoints[i]*.42));
+                                            context.lineTo(848, 653);
+                                            context.lineTo(787, 653);
                                         }
                                     }
 
-                                    context2.closePath();
-                                    context2.fillStyle = "#00799c";
-                                    context2.fill();
-                                    context2.fillStyle = "#000000";
+                                    context.closePath();
+                                    context.fillStyle = "#00799c";
+                                    context.fill();
+                                    context.fillStyle = "#000000";
                                 }
 
                                 //sand TOP
-                                for (var i = 1; i < getName.length; i++) {
+                                for (var i = 0; i < getName.length; i++) {
                                     if (getPoints[i] != 100) {
                                         if (getPoints[i] <= 45) calibrate = 0.42;
                                         else calibrate = 0.3;
-                                        if (i % 5 == 1) {
-                                            if (i == 1) {
+                                        if (i % 5 == 0) {
+                                            if (i == 0) {
                                                 // top of hourglass y = 160
-                                                context2.beginPath();
-                                                context2.moveTo(97+(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
-                                                context2.lineTo(122.5, 205);
-                                                context2.lineTo(148-(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
-                                                context2.lineTo(97, 160+((getPoints[i])*calibrate));
-                                            } else if (i == 6) {
-                                                context2.beginPath();
-                                                context2.moveTo(97+(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
-                                                context2.lineTo(122.5, 405);
-                                                context2.lineTo(148-(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
-                                                context2.lineTo(97, 360+((getPoints[i])*calibrate));
-                                            } else if (i == 11) {
-                                                context2.beginPath();
-                                                context2.moveTo(97+(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
-                                                context2.lineTo(122.5, 605);
-                                                context2.lineTo(148-(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
-                                                context2.lineTo(97, 560+((getPoints[i])*calibrate));
+                                                context.beginPath();
+                                                context.moveTo(97+(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
+                                                context.lineTo(122.5, 165);
+                                                context.lineTo(148-(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
+                                                context.lineTo(97, 120+((getPoints[i])*calibrate));
+                                            } else if (i == 5) {
+                                                context.beginPath();
+                                                context.moveTo(97+(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
+                                                context.lineTo(122.5, 405);
+                                                context.lineTo(148-(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
+                                                context.lineTo(97, 360+((getPoints[i])*calibrate));
+                                            } else if (i == 10) {
+                                                context.beginPath();
+                                                context.moveTo(97+(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
+                                                context.lineTo(122.5, 605);
+                                                context.lineTo(148-(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
+                                                context.lineTo(97, 560+((getPoints[i])*calibrate));
                                             }
 
+                                        } else if (i % 5 == 1) {
+                                            if (i == 1) {
+                                                // top of hourglass y = 160
+                                                context.beginPath();
+                                                context.moveTo(262+(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
+                                                context.lineTo(287.5, 205);
+                                                context.lineTo(313-(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
+                                                context.lineTo(262, 160+((getPoints[i])*calibrate));
+                                            } else if (i == 6) {
+                                                context.beginPath();
+                                                context.moveTo(262+(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
+                                                context.lineTo(287.5, 405);
+                                                context.lineTo(313-(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
+                                                context.lineTo(262, 360+((getPoints[i])*calibrate));
+                                            } else if (i == 11) {
+                                                context.beginPath();
+                                                context.moveTo(262+(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
+                                                context.lineTo(287.5, 605);
+                                                context.lineTo(313-(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
+                                                context.lineTo(262, 560+((getPoints[i])*calibrate));
+                                            }
                                         } else if (i % 5 == 2) {
                                             if (i == 2) {
-                                                // top of hourglass y = 160
-                                                context2.beginPath();
-                                                context2.moveTo(262+(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
-                                                context2.lineTo(287.5, 205);
-                                                context2.lineTo(313-(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
-                                                context2.lineTo(262, 160+((getPoints[i])*calibrate));
+                                                context.beginPath();
+                                                context.moveTo(447+(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
+                                                context.lineTo(472.5, 205);
+                                                context.lineTo(498-(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
+                                                context.lineTo(447, 160+((getPoints[i])*calibrate));
                                             } else if (i == 7) {
-                                                context2.beginPath();
-                                                context2.moveTo(262+(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
-                                                context2.lineTo(287.5, 405);
-                                                context2.lineTo(313-(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
-                                                context2.lineTo(262, 360+((getPoints[i])*calibrate));
+                                                context.beginPath();
+                                                context.moveTo(447+(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
+                                                context.lineTo(472.5, 405);
+                                                context.lineTo(498-(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
+                                                context.lineTo(447, 360+((getPoints[i])*calibrate));
                                             } else if (i == 12) {
-                                                context2.beginPath();
-                                                context2.moveTo(262+(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
-                                                context2.lineTo(287.5, 605);
-                                                context2.lineTo(313-(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
-                                                context2.lineTo(262, 560+((getPoints[i])*calibrate));
+                                                context.beginPath();
+                                                context.moveTo(447+(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
+                                                context.lineTo(472.5, 605);
+                                                context.lineTo(498-(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
+                                                context.lineTo(447, 560+((getPoints[i])*calibrate));
                                             }
                                         } else if (i % 5 == 3) {
                                             if (i == 3) {
-                                                context2.beginPath();
-                                                context2.moveTo(447+(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
-                                                context2.lineTo(472.5, 205);
-                                                context2.lineTo(498-(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
-                                                context2.lineTo(447, 160+((getPoints[i])*calibrate));
+                                                context.beginPath();
+                                                context.moveTo(622+(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
+                                                context.lineTo(647.5, 205);
+                                                context.lineTo(673-(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
+                                                context.lineTo(622, 160+((getPoints[i])*calibrate));
                                             } else if (i == 8) {
-                                                context2.beginPath();
-                                                context2.moveTo(447+(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
-                                                context2.lineTo(472.5, 405);
-                                                context2.lineTo(498-(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
-                                                context2.lineTo(447, 360+((getPoints[i])*calibrate));
+                                                context.beginPath();
+                                                context.moveTo(622+(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
+                                                context.lineTo(647.5, 405);
+                                                context.lineTo(673-(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
+                                                context.lineTo(622, 360+((getPoints[i])*calibrate));
                                             } else if (i == 13) {
-                                                context2.beginPath();
-                                                context2.moveTo(447+(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
-                                                context2.lineTo(472.5, 605);
-                                                context2.lineTo(498-(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
-                                                context2.lineTo(447, 560+((getPoints[i])*calibrate));
+                                                context.beginPath();
+                                                context.moveTo(622+(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
+                                                context.lineTo(647.5, 605);
+                                                context.lineTo(673-(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
+                                                context.lineTo(622, 560+((getPoints[i])*calibrate));
                                             }
                                         } else if (i % 5 == 4) {
                                             if (i == 4) {
-                                                context2.beginPath();
-                                                context2.moveTo(622+(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
-                                                context2.lineTo(647.5, 205);
-                                                context2.lineTo(673-(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
-                                                context2.lineTo(622, 160+((getPoints[i])*calibrate));
+                                                context.beginPath();
+                                                context.moveTo(797+(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
+                                                context.lineTo(822.5, 205);
+                                                context.lineTo(848-(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
+                                                context.lineTo(797, 160+((getPoints[i])*calibrate));
                                             } else if (i == 9) {
-                                                context2.beginPath();
-                                                context2.moveTo(622+(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
-                                                context2.lineTo(647.5, 405);
-                                                context2.lineTo(673-(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
-                                                context2.lineTo(622, 360+((getPoints[i])*calibrate));
+                                                context.beginPath();
+                                                context.moveTo(797+(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
+                                                context.lineTo(822.5, 405);
+                                                context.lineTo(848-(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
+                                                context.lineTo(797, 360+((getPoints[i])*calibrate));
                                             } else if (i == 14) {
-                                                context2.beginPath();
-                                                context2.moveTo(622+(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
-                                                context2.lineTo(647.5, 605);
-                                                context2.lineTo(673-(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
-                                                context2.lineTo(622, 560+((getPoints[i])*calibrate));
-                                            }
-                                        } else if (i % 5 == 0) {
-                                            if (i == 5) {
-                                                context2.beginPath();
-                                                context2.moveTo(797+(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
-                                                context2.lineTo(822.5, 205);
-                                                context2.lineTo(848-(getPoints[i]*.16), 160+((getPoints[i])*calibrate));
-                                                context2.lineTo(797, 160+((getPoints[i])*calibrate));
-                                            } else if (i == 10) {
-                                                context2.beginPath();
-                                                context2.moveTo(797+(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
-                                                context2.lineTo(822.5, 405);
-                                                context2.lineTo(848-(getPoints[i]*.16), 360+((getPoints[i])*calibrate));
-                                                context2.lineTo(797, 360+((getPoints[i])*calibrate));
-                                            } else if (i == 15) {
-                                                context2.beginPath();
-                                                context2.moveTo(797+(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
-                                                context2.lineTo(822.5, 605);
-                                                context2.lineTo(848-(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
-                                                context2.lineTo(797, 560+((getPoints[i])*calibrate));
+                                                context.beginPath();
+                                                context.moveTo(797+(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
+                                                context.lineTo(822.5, 605);
+                                                context.lineTo(848-(getPoints[i]*.16), 560+((getPoints[i])*calibrate));
+                                                context.lineTo(797, 560+((getPoints[i])*calibrate));
                                             }
                                         }
-                                        context2.closePath();
-                                        context2.fillStyle = "#00799c";
-                                        context2.fill();
-                                        context2.fillStyle = "#000000";
+                                        context.closePath();
+                                        context.fillStyle = "#00799c";
+                                        context.fill();
+                                        context.fillStyle = "#000000";
                                     }
 
                                 }
