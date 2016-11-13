@@ -5,7 +5,7 @@
       "slots": [
       	{
           "name": "StudentName",
-          "type": "AMAZON.LITERAL"
+          "type": "STUDENTS"
         },
         {
           "name": "Points",
@@ -18,7 +18,7 @@
       "slots": [
       	{
           "name": "StudentName",
-          "type": "AMAZON.LITERAL"
+          "type": "STUDENTS"
         },
         {
           "name": "Points",
@@ -40,8 +40,24 @@
         {
           "name": "DueTime",
           "type": "AMAZON.TIME"
+        },
+        {
+          "name": "PromptTime",
+          "type": "YESORNO"
         }
       ]
+    },
+    {"intent": "RemoveAssignment",
+    "slots": [
+    	{
+    		"name": "AssignmentName",
+    		"type": "AMAZON.LITERAL"
+    	},
+    	{
+    		"name": "Confirm",
+    		"type": "YESORNO"
+    	}
+  	  ]
     }
   ]
 }

@@ -69,6 +69,7 @@ AddAssignment add {chapter three though six due|AssignmentName}  on {DueDate} at
 AddAssignment add {homework problems nine to twenty due|AssignmentName}  on {DueDate} at {DueTime}
 AddAssignment add {take home test due|AssignmentName}  on {DueDate} at {DueTime}
 AddAssignment add {homework problems five through thirty two due|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {homework due|AssignmentName} on {DueDate} at {DueTime}
 
 AddAssignment add {test five|AssignmentName} on {DueDate}
 AddAssignment add {read chapter three|AssignmentName} on {DueDate}
@@ -105,6 +106,7 @@ AddAssignment add {chapter three though six due|AssignmentName} on {DueDate}
 AddAssignment add {homework problems nine to twenty due|AssignmentName} on {DueDate}
 AddAssignment add {take home test due|AssignmentName} on {DueDate}
 AddAssignment add {homework problems five through thirty two due|AssignmentName} on {DueDate}
+AddAssignment add {homework due|AssignmentName} on {DueDate}
 
 AddAssignment add {test five|AssignmentName} at {DueTime} on {DueDate}
 AddAssignment add {read chapter three|AssignmentName} at {DueTime} on {DueDate}
@@ -141,6 +143,7 @@ AddAssignment add {chapter three though six due|AssignmentName} at {DueTime} on 
 AddAssignment add {homework problems nine to twenty due|AssignmentName} at {DueTime} on {DueDate}
 AddAssignment add {take home test due|AssignmentName} at {DueTime} on {DueDate}
 AddAssignment add {homework problems five through thirty two due|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {homework due|AssignmentName} at {DueTime} on {DueDate}
 
 AddAssignment add {test five|AssignmentName}
 AddAssignment add {read chapter three|AssignmentName}
@@ -177,3 +180,127 @@ AddAssignment add {chapter three though six due|AssignmentName}
 AddAssignment add {homework problems nine to twenty due|AssignmentName}
 AddAssignment add {take home test due|AssignmentName}
 AddAssignment add {homework problems five through thirty two due|AssignmentName}
+AddAssignment add {homework due|AssignmentName}
+
+AddPoints {StudentName}
+AddPoints {Points}
+RemovePoints {StudentName}
+RemovePoints {Points}
+AddAssignment {DueDate}
+AddAssignment {DueTime}
+AddAssignment {PromptTime}
+
+AddAssignment {test five|AssignmentName}
+AddAssignment {read chapter three|AssignmentName}
+AddAssignment {read chapter thirteen through eighteen|AssignmentName}
+AddAssignment {finish project|AssignmentName}
+AddAssignment {do problems forty through fifty|AssignmentName}
+AddAssignment {problems seventy two through eighty six even|AssignmentName}
+AddAssignment {do problems eleven through thirty three odd|AssignmentName}
+AddAssignment {read pages one through one hundred|AssignmentName}
+AddAssignment {quiz over chapter twelve|AssignmentName}
+AddAssignment {project due|AssignmentName}
+AddAssignment {test|AssignmentName}
+AddAssignment {project|AssignmentName}
+AddAssignment {quiz|AssignmentName}
+AddAssignment {do problems five to ten|AssignmentName}
+AddAssignment {problems three to eleven|AssignmentName}
+AddAssignment {do problems thirteen to fifty odd|AssignmentName}
+AddAssignment {problem three eight nine fifteen and eighteen|AssignmentName}
+AddAssignment {do problem seventy two eighty three eighty four and ninety five|AssignmentName}
+AddAssignment {test four|AssignmentName}
+AddAssignment {quiz two| AssignmentName}
+AddAssignment {test two|AssignmentName}
+AddAssignment {quiz|AssignmentName}
+AddAssignment {quiz four|AssignmentName}
+AddAssignment {quiz one|AssignmentName}
+AddAssignment {quiz chapter three and four|AssignmentName}
+AddAssignment {quiz section one and two|AssignmentName}
+AddAssignment {homework two|AssignmentName}
+AddAssignment {homework four|AssignmentName}
+AddAssignment {homework thirty|AssignmentName}
+AddAssignment {homework chapter two to four|AssignmentName}
+AddAssignment {homework section four to seven|AssignmentName}
+AddAssignment {chapter three though six due|AssignmentName}
+AddAssignment {homework problems nine to twenty due|AssignmentName}
+AddAssignment {take home test due|AssignmentName}
+AddAssignment {homework problems five through thirty two due|AssignmentName}
+AddAssignment {homework due|AssignmentName}
+
+RemoveAssignment remove {test five|AssignmentName}
+RemoveAssignment remove {read chapter three|AssignmentName}
+RemoveAssignment remove {read chapter thirteen through eighteen|AssignmentName}
+RemoveAssignment remove {finish project|AssignmentName}
+RemoveAssignment remove {do problems forty through fifty|AssignmentName}
+RemoveAssignment remove {problems seventy two through eighty six even|AssignmentName}
+RemoveAssignment remove {do problems eleven through thirty three odd|AssignmentName}
+RemoveAssignment remove {read pages one through one hundred|AssignmentName}
+RemoveAssignment remove {quiz over chapter twelve|AssignmentName}
+RemoveAssignment remove {project due|AssignmentName}
+RemoveAssignment remove {test|AssignmentName}
+RemoveAssignment remove {project|AssignmentName}
+RemoveAssignment remove {quiz|AssignmentName}
+RemoveAssignment remove {do problems five to ten|AssignmentName}
+RemoveAssignment remove {problems three to eleven|AssignmentName}
+RemoveAssignment remove {do problems thirteen to fifty odd|AssignmentName}
+RemoveAssignment remove {problem three eight nine fifteen and eighteen|AssignmentName}
+RemoveAssignment remove {do problem seventy two eighty three eighty four and ninety five|AssignmentName}
+RemoveAssignment remove {test four|AssignmentName}
+RemoveAssignment remove {quiz two| AssignmentName}
+RemoveAssignment remove {test two|AssignmentName}
+RemoveAssignment remove {quiz|AssignmentName}
+RemoveAssignment remove {quiz four|AssignmentName}
+RemoveAssignment remove {quiz one|AssignmentName}
+RemoveAssignment remove {quiz chapter three and four|AssignmentName}
+RemoveAssignment remove {quiz section one and two|AssignmentName}
+RemoveAssignment remove {homework two|AssignmentName}
+RemoveAssignment remove {homework four|AssignmentName}
+RemoveAssignment remove {homework thirty|AssignmentName}
+RemoveAssignment remove {homework chapter two to four|AssignmentName}
+RemoveAssignment remove {homework section four to seven|AssignmentName}
+RemoveAssignment remove {chapter three though six due|AssignmentName}
+RemoveAssignment remove {homework problems nine to twenty due|AssignmentName}
+RemoveAssignment remove {take home test due|AssignmentName}
+RemoveAssignment remove {homework problems five through thirty two due|AssignmentName}
+RemoveAssignment remove {homework due|AssignmentName}
+
+RemoveAssignment delete {test five|AssignmentName}
+RemoveAssignment delete {read chapter three|AssignmentName}
+RemoveAssignment delete {read chapter thirteen through eighteen|AssignmentName}
+RemoveAssignment delete {finish project|AssignmentName}
+RemoveAssignment delete {do problems forty through fifty|AssignmentName}
+RemoveAssignment delete {problems seventy two through eighty six even|AssignmentName}
+RemoveAssignment delete {do problems eleven through thirty three odd|AssignmentName}
+RemoveAssignment delete {read pages one through one hundred|AssignmentName}
+RemoveAssignment delete {quiz over chapter twelve|AssignmentName}
+RemoveAssignment delete {project due|AssignmentName}
+RemoveAssignment delete {test|AssignmentName}
+RemoveAssignment delete {project|AssignmentName}
+RemoveAssignment delete {quiz|AssignmentName}
+RemoveAssignment delete {do problems five to ten|AssignmentName}
+RemoveAssignment delete {problems three to eleven|AssignmentName}
+RemoveAssignment delete {do problems thirteen to fifty odd|AssignmentName}
+RemoveAssignment delete {problem three eight nine fifteen and eighteen|AssignmentName}
+RemoveAssignment delete {do problem seventy two eighty three eighty four and ninety five|AssignmentName}
+RemoveAssignment delete {test four|AssignmentName}
+RemoveAssignment delete {quiz two| AssignmentName}
+RemoveAssignment delete {test two|AssignmentName}
+RemoveAssignment delete {quiz|AssignmentName}
+RemoveAssignment delete {quiz four|AssignmentName}
+RemoveAssignment delete {quiz one|AssignmentName}
+RemoveAssignment delete {quiz chapter three and four|AssignmentName}
+RemoveAssignment delete {quiz section one and two|AssignmentName}
+RemoveAssignment delete {homework two|AssignmentName}
+RemoveAssignment delete {homework four|AssignmentName}
+RemoveAssignment delete {homework thirty|AssignmentName}
+RemoveAssignment delete {homework chapter two to four|AssignmentName}
+RemoveAssignment delete {homework section four to seven|AssignmentName}
+RemoveAssignment delete {chapter three though six due|AssignmentName}
+RemoveAssignment delete {homework problems nine to twenty due|AssignmentName}
+RemoveAssignment delete {take home test due|AssignmentName}
+RemoveAssignment delete {homework problems five through thirty two due|AssignmentName}
+RemoveAssignment delete {homework due|AssignmentName}
+
+RemoveAssignment delete assignment
+RemoveAssignment remove assignment
+RemoveAssignment {Confirm}
