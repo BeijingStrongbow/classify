@@ -70,7 +70,7 @@ public class ClassifySpeechlet implements Speechlet{
 				points = Integer.parseInt((String) session.getAttribute("Points"));
 				
 				output.setText("Alright, " + student + " now has " + addParse(student, points) + " points");
-				
+				Runtime.getRuntime.exec("pointsphp.php");
 			}
 			else if(session.getAttribute("IntentName").equals("RemovePoints")){
 				String student = (String) session.getAttribute("StudentName");

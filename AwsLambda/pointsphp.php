@@ -14,7 +14,7 @@
 	$arlength = $_GET["length"];
 	$name1 = $_GET["getName"];
     $people = array(
-        "+17854774265" => "$name1" //+17854774265
+        "+13236384021" => "$name1" //+17854774265
     );
 
     // Loop through people. $number is a phone number, and $name is the name 
