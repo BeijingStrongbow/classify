@@ -47,7 +47,8 @@
         }
       ]
     },
-    {"intent": "RemoveAssignment",
+    {
+    "intent": "RemoveAssignment",
     "slots": [
     	{
     		"name": "AssignmentName",
@@ -58,6 +59,9 @@
     		"type": "YESORNO"
     	}
   	  ]
+    },
+    {
+      "intent": "GreatestPoints"
     }
   ]
 }
