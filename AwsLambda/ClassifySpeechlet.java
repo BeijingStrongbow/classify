@@ -12,6 +12,9 @@ import com.amazon.speech.speechlet.SpeechletResponse;
 import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import org.parse4j.Parse;
@@ -45,9 +48,8 @@ public class ClassifySpeechlet implements Speechlet{
 			if(i.getSlot("PromptTime").getValue() != null && session.getAttribute("PromptTime") == null){session.setAttribute("PromptTime", i.getSlot("PromptTime").getValue());}
 		}
 		else if(i.getName().equals("RemoveAssignment")){
-			if(i.getSlot("Confirm").getValue() != null && session.getAttribute("Confirm") == null){session.setAttribute("Confirm", i.getSlot("Confirm").getValue());}
 			if(i.getSlot("AssignmentName").getValue() != null && session.getAttribute("AssignmentName") == null){session.setAttribute("AssignmentName", i.getSlot("AssignmentName").getValue());}
-
+			if(i.getSlot("Confirm").getValue() != null && session.getAttribute("Confirm") == null){session.setAttribute("Confirm", i.getSlot("Confirm").getValue());}
 		}
 		
 		if(i.getName() != null){
@@ -69,8 +71,7 @@ public class ClassifySpeechlet implements Speechlet{
 				
 				points = Integer.parseInt((String) session.getAttribute("Points"));
 				
-				output.setText("Alright, " + student + " now has " + addParse(student, points) + " points");
-				
+				output.setText("Alright, " + student + " now has " + ParseHandler.addPoints(student, points) + " points");
 			}
 			else if(session.getAttribute("IntentName").equals("RemovePoints")){
 				String student = (String) session.getAttribute("StudentName");
@@ -88,8 +89,7 @@ public class ClassifySpeechlet implements Speechlet{
 				
 				points = Integer.parseInt((String) session.getAttribute("Points"));
 				
-				output.setText("Alright, " + student + " now has " + subtractParse(student, points) + " points");
-				
+				output.setText("Alright, " + student + " now has " + ParseHandler.subtractPoints(student, points) + " points");
 			}
 			else if(session.getAttribute("IntentName").equals("RemoveAssignment")){
 				if(session.getAttribute("AssignmentName") == null){
@@ -97,26 +97,16 @@ public class ClassifySpeechlet implements Speechlet{
 					return SpeechletResponse.newAskResponse(output, reprompt);
 				}
 				
-				if(session.getAttribute("Confirm") == null){
-					output.setText("Are you sure you want to delete " + (String) session.getAttribute("AssignmentName") + "?");
-					return SpeechletResponse.newAskResponse(output, reprompt);
-				}
-				else if(session.getAttribute("Confirm").equals("yes")){
-					if(removeAssignment((String) session.getAttribute("AssignmentName"))){
-						output.setText("I deleted the assignment");
-					}
-					else{
-						output.setText("Sorry, I couldn't delete the assignment");
-					}
-					response.setOutputSpeech(output);
-					return response;
+				if(ParseHandler.removeAssignment((String) session.getAttribute("AssignmentName"))){
+					output.setText("Deleted all assignments named " + session.getAttribute("AssignmentName"));
 				}
 				else{
-					output.setText("okay");
-					response.setOutputSpeech(output);
-					return response;
+					output.setText("Sorry, I couldn't delete the assignment");
 				}
+				response.setOutputSpeech(output);
+				return response;
 			}
+			
 			else if(session.getAttribute("IntentName").equals("AddAssignment")){
 				String date = (String) session.getAttribute("DueDate");
 				String name = (String) session.getAttribute("AssignmentName");
@@ -130,17 +120,6 @@ public class ClassifySpeechlet implements Speechlet{
 				if(date == null){
 					output.setText("When's this assignment due?");
 					return SpeechletResponse.newAskResponse(output, reprompt);
-				}
-				
-				if(time == null){
-					if("yes".equals(session.getAttribute("PromptTime"))){
-						output.setText("What time is that?");
-						return SpeechletResponse.newAskResponse(output, reprompt);
-					}
-					else if(session.getAttribute("PromptTime") == null){
-						output.setText("Is the assignment due at a specific time?");
-						return SpeechletResponse.newAskResponse(output, reprompt);
-					}
 				}
 				
 				if(name.substring(0,2).equals("a ")){
@@ -211,8 +190,8 @@ public class ClassifySpeechlet implements Speechlet{
 						date += ", " + time;
 					}
 					
-					output.setText("Alright, I added assignment " + name + " on " + date);
-					assignmentParse(name, date, monthAsInt, dayAsInt);
+					output.setText("Alright, I added " + name + " on " + date);
+					ParseHandler.addAssignment(name, date, monthAsInt, dayAsInt);
 				}
 				catch(NumberFormatException ex){
 					output.setText("Please specify a specific date not a week or weekend");
@@ -247,99 +226,5 @@ public class ClassifySpeechlet implements Speechlet{
 		SpeechletResponse response = new SpeechletResponse();	
 		speech.setText("Hi! I'm classify, your classroom assistant. Would you like to give or remove points, or add an assignment?");
 		SpeechletResponse.newTellResponse(speech);	
-	}
-	
-	private int addParse(String name, int numPoints){
-		
-		Parse.initialize("qsJqqoI6URL9MTUSMNHfdjtz7yeVQVHTxQLyThmc", "YUtYFESPDjjFtgp5eMgvdLh1p2vvMVjXcxIpTxBF");
-    	int points = 0;
-		
-		ParseQuery<ParseObject> query = ParseQuery.getQuery("Points");
-    	query.whereEqualTo("Name", name.substring(0, 1).toUpperCase() + name.substring(1));
-    	List<ParseObject> person;
-    	try {
-    		person = query.find();
-    		ParseObject p = person.get(0);
-    		int oldPoints = p.getInt("Points");
-    		if(oldPoints + numPoints <= 100){
-    			p.put("Points", oldPoints + numPoints);
-    			points = oldPoints + numPoints;
-    			p.save();
-    		}
-    		else{
-    			p.put("Points", 100);
-    			points = 100;
-    			p.save();
-    		}
-    	} catch (org.parse4j.ParseException e) {
-    		e.printStackTrace();
-    	}
-		return points;
-	}
-	
-	private int subtractParse(String name, int numPoints){
-		
-		Parse.initialize("qsJqqoI6URL9MTUSMNHfdjtz7yeVQVHTxQLyThmc", "YUtYFESPDjjFtgp5eMgvdLh1p2vvMVjXcxIpTxBF");
-    	int points = 0;
-		
-		ParseQuery<ParseObject> query = ParseQuery.getQuery("Points");
-    	query.whereEqualTo("Name", name.substring(0, 1).toUpperCase() + name.substring(1));
-    	List<ParseObject> person;
-
-    	try {
-    		person = query.find();
-    		ParseObject p = person.get(0);
-    		int oldPoints = p.getInt("Points");
-    		if(oldPoints - numPoints >= 0){
-    			p.put("Points", oldPoints - numPoints);
-    			points = oldPoints - numPoints;
-        		p.save();
-    		}
-    		else{
-    			p.put("Points", 0);
-    			p.save();
-    		}
-    		
-    	} catch (org.parse4j.ParseException e) {
-    		e.printStackTrace();
-    	}
-		return points;
-	}
-	
-	private void assignmentParse(String name, String date, int monthAsInt, int dayAsInt){
-		
-		Parse.initialize("qsJqqoI6URL9MTUSMNHfdjtz7yeVQVHTxQLyThmc", "YUtYFESPDjjFtgp5eMgvdLh1p2vvMVjXcxIpTxBF");
-    	
-		ParseObject assignment = new ParseObject("Homework");
-		
-		assignment.put("Title", name);
-		assignment.put("DueDate", date);
-		assignment.put("Month", monthAsInt);
-		assignment.put("DayOfMonth", dayAsInt);
-		try {
-			assignment.save();
-		} catch (org.parse4j.ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-	
-	private boolean removeAssignment(String name){
-		Parse.initialize("qsJqqoI6URL9MTUSMNHfdjtz7yeVQVHTxQLyThmc", "YUtYFESPDjjFtgp5eMgvdLh1p2vvMVjXcxIpTxBF");
-    	
-		ParseQuery query = ParseQuery.getQuery("Homework");
-		query.whereEqualTo("Name", name.substring(0, 1).toUpperCase() + name.substring(1));
-    	List<ParseObject> assignment;
-		
-		try {
-			assignment = query.find();
-			assignment.get(0).delete();
-			return true;
-		} catch (org.parse4j.ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
-		}
-	}
+	}	
 }
