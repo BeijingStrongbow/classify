@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43bd2033-25f5-4b0d-a1fb-07481460afdd" name="Default" comment="">
+<<<<<<< Updated upstream
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/classify-htmlcss/classify/images/hourglassOutline.png" afterPath="$PROJECT_DIR$/web/classify-htmlcss/classify/images/hourglassOutline.png" />
+>>>>>>> Stashed changes
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/classify-htmlcss/classify/index.html" afterPath="$PROJECT_DIR$/web/classify-htmlcss/classify/index.html" />
     </list>
@@ -29,13 +33,19 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/index.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="376">
               <caret line="496" column="80" selection-start-line="496" selection-start-column="80" selection-end-line="496" selection-end-column="80" />
+=======
+            <state relative-caret-position="346">
+              <caret line="338" column="102" selection-start-line="338" selection-start-column="102" selection-end-line="338" selection-end-column="102" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#5;n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#6;n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+<<<<<<< Updated upstream
                 <element signature="e#9218#9224#0" expanded="true" />
                 <element signature="e#9240#9246#0" expanded="true" />
                 <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -47,6 +57,19 @@
                 <marker date="1479056020155" expanded="true" signature="6394:6404" ph="..." />
                 <marker date="1479056020155" expanded="true" signature="6799:6809" ph="..." />
                 <marker date="1479056020155" expanded="true" signature="6887:6897" ph="..." />
+=======
+                <element signature="e#9199#9205#0" expanded="true" />
+                <element signature="e#9221#9227#0" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <marker date="1479053342867" expanded="true" signature="5997:6007" ph="..." />
+                <marker date="1479053342867" expanded="true" signature="6091:6101" ph="..." />
+                <marker date="1479053342867" expanded="true" signature="6300:6310" ph="..." />
+                <marker date="1479053342867" expanded="true" signature="6394:6404" ph="..." />
+                <marker date="1479053342867" expanded="true" signature="6799:6809" ph="..." />
+                <marker date="1479053342867" expanded="true" signature="6887:6897" ph="..." />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -56,10 +79,16 @@
         <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/assets/css/oldmain.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="33643">
+<<<<<<< Updated upstream
               <caret line="1988" column="37" selection-start-line="1988" selection-start-column="37" selection-end-line="1988" selection-end-column="37" />
               <folding>
                 <marker date="1479053617108" expanded="true" signature="1469:1515" ph="{...}" />
                 <marker date="1479053617108" expanded="true" signature="33556:33563" ph="{...}" />
+=======
+              <caret line="1979" column="37" selection-start-line="1979" selection-start-column="37" selection-end-line="1979" selection-end-column="37" />
+              <folding>
+                <marker date="1479023441777" expanded="true" signature="33394:33401" ph="{...}" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -398,7 +427,11 @@
       <workItem from="1478968203648" duration="1544000" />
       <workItem from="1478972137618" duration="16000" />
       <workItem from="1478987519872" duration="26507000" />
+<<<<<<< Updated upstream
       <workItem from="1479046429457" duration="9071000" />
+=======
+      <workItem from="1479046429457" duration="6586000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -417,7 +450,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="54809000" />
+=======
+    <option name="totallyTimeSpent" value="52324000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -523,8 +560,12 @@
         <state relative-caret-position="1122">
           <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
           <folding>
+<<<<<<< Updated upstream
             <marker date="1479053617108" expanded="true" signature="1469:1515" ph="{...}" />
             <marker date="1479053617108" expanded="true" signature="33556:33563" ph="{...}" />
+=======
+            <marker date="1479023441777" expanded="true" signature="33394:33401" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
@@ -538,6 +579,7 @@
             <element signature="n#script#5;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#6;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+<<<<<<< Updated upstream
             <element signature="e#9218#9224#0" expanded="true" />
             <element signature="e#9240#9246#0" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -549,6 +591,19 @@
             <marker date="1479056020155" expanded="true" signature="6394:6404" ph="..." />
             <marker date="1479056020155" expanded="true" signature="6799:6809" ph="..." />
             <marker date="1479056020155" expanded="true" signature="6887:6897" ph="..." />
+=======
+            <element signature="e#9199#9205#0" expanded="true" />
+            <element signature="e#9221#9227#0" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1479053342867" expanded="true" signature="5997:6007" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6091:6101" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6300:6310" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6394:6404" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6799:6809" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6887:6897" ph="..." />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
@@ -562,6 +617,7 @@
             <element signature="n#script#5;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#6;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+<<<<<<< Updated upstream
             <element signature="e#9218#9224#0" expanded="true" />
             <element signature="e#9240#9246#0" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -573,6 +629,19 @@
             <marker date="1479056020155" expanded="true" signature="6394:6404" ph="..." />
             <marker date="1479056020155" expanded="true" signature="6799:6809" ph="..." />
             <marker date="1479056020155" expanded="true" signature="6887:6897" ph="..." />
+=======
+            <element signature="e#9199#9205#0" expanded="true" />
+            <element signature="e#9221#9227#0" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1479053342867" expanded="true" signature="5997:6007" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6091:6101" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6300:6310" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6394:6404" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6799:6809" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6887:6897" ph="..." />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
@@ -607,6 +676,7 @@
             <element signature="n#script#5;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#6;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+<<<<<<< Updated upstream
             <element signature="e#9218#9224#0" expanded="true" />
             <element signature="e#9240#9246#0" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -618,6 +688,19 @@
             <marker date="1479056020155" expanded="true" signature="6394:6404" ph="..." />
             <marker date="1479056020155" expanded="true" signature="6799:6809" ph="..." />
             <marker date="1479056020155" expanded="true" signature="6887:6897" ph="..." />
+=======
+            <element signature="e#9199#9205#0" expanded="true" />
+            <element signature="e#9221#9227#0" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1479053342867" expanded="true" signature="5997:6007" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6091:6101" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6300:6310" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6394:6404" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6799:6809" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6887:6897" ph="..." />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
@@ -675,6 +758,7 @@
             <element signature="n#script#5;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#6;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+<<<<<<< Updated upstream
             <element signature="e#9218#9224#0" expanded="true" />
             <element signature="e#9240#9246#0" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -686,6 +770,19 @@
             <marker date="1479056020155" expanded="true" signature="6394:6404" ph="..." />
             <marker date="1479056020155" expanded="true" signature="6799:6809" ph="..." />
             <marker date="1479056020155" expanded="true" signature="6887:6897" ph="..." />
+=======
+            <element signature="e#9199#9205#0" expanded="true" />
+            <element signature="e#9221#9227#0" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1479053342867" expanded="true" signature="5997:6007" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6091:6101" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6300:6310" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6394:6404" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6799:6809" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6887:6897" ph="..." />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
@@ -766,10 +863,16 @@
     <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/assets/css/oldmain.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33643">
+<<<<<<< Updated upstream
           <caret line="1988" column="37" selection-start-line="1988" selection-start-column="37" selection-end-line="1988" selection-end-column="37" />
           <folding>
             <marker date="1479053617108" expanded="true" signature="1469:1515" ph="{...}" />
             <marker date="1479053617108" expanded="true" signature="33556:33563" ph="{...}" />
+=======
+          <caret line="1979" column="37" selection-start-line="1979" selection-start-column="37" selection-end-line="1979" selection-end-column="37" />
+          <folding>
+            <marker date="1479023441777" expanded="true" signature="33394:33401" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
@@ -784,13 +887,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="376">
           <caret line="496" column="80" selection-start-line="496" selection-start-column="80" selection-end-line="496" selection-end-column="80" />
+=======
+        <state relative-caret-position="346">
+          <caret line="338" column="102" selection-start-line="338" selection-start-column="102" selection-end-line="338" selection-end-column="102" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#5;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#6;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+<<<<<<< Updated upstream
             <element signature="e#9218#9224#0" expanded="true" />
             <element signature="e#9240#9246#0" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -802,6 +911,19 @@
             <marker date="1479056020155" expanded="true" signature="6394:6404" ph="..." />
             <marker date="1479056020155" expanded="true" signature="6799:6809" ph="..." />
             <marker date="1479056020155" expanded="true" signature="6887:6897" ph="..." />
+=======
+            <element signature="e#9199#9205#0" expanded="true" />
+            <element signature="e#9221#9227#0" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1479053342867" expanded="true" signature="5997:6007" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6091:6101" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6300:6310" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6394:6404" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6799:6809" ph="..." />
+            <marker date="1479053342867" expanded="true" signature="6887:6897" ph="..." />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
