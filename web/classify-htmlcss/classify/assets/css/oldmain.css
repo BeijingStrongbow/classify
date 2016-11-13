@@ -87,16 +87,34 @@
 	}
 	
 	.containerassignment {
-		width: 20vw;
+		width: 30vw;
 		border: 2px solid #00799c;
 		border-style: none solid none none;
 	}
 	
 	.containerdate {
 		margin-left: 1.5em;
-		width: 15vw;
+		width: 30vw;
 		border: 2px solid #00799c;
 		border-style: none solid none none;
+	}
+	
+	.containerassignment1 {
+		width: 30vw;
+		font-weight: 600;
+	}
+	
+	.containerassignment1 h3 {
+		font-weight: 600;	
+	}
+	
+	.containerdate1 {
+		margin-left: 1.5em;
+		width: 30vw;
+	}
+	
+	.containerdate1 h3 {
+		font-weight: 600;
 	}
 	
 	.containername {
