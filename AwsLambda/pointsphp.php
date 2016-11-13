@@ -26,9 +26,9 @@
                 'from' => "+12138631089", 
                 
 				if (/*NEED TO PUT VARIABLE FOR POINTS>SOME POINT VALUE*/) {
-					'body' => "Hello there! Your child, $name, has done a damn good job yo! Go buy it sum cake."
+					'body' => "Hello there! Your child, $name, has done a damn good job yo! They have accumulated ****NEED VARIABLE**** points. Go buy it sum cake."
 				} else if (/*NEED TO PUT VARIABLE FOR POINTS<SOME OTHER POINT VALUE*/) {
-					'body' => "Hello there! Your child, $name, is being a naughty little stick. Please punish it fam."
+					'body' => "Hello there! Your child, $name, is being a naughty little stick. They have  ****NEED VARIABLE**** points at the moment. Please punish it fam."
 				}
             )
         );
