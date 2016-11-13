@@ -14,5 +14,5 @@ Classify fixes this by closing the distance between parents and the classroom. W
 
 Our team used an Amazon Echo in conjunction with Amazon Web Services Lambda to send points and assignments to Parse Server. Then, www.echoclassify.tech retrieved data from Parse to show it on the website. Using emailjs, we were able to allow parents to send emails to the teacher directly off the website.
 
-##Built With
+###Built with
 java, javascript, html5, css3, php, twilio, Parse, Smazon Web Services, email.js
