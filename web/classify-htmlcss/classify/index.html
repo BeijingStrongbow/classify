@@ -88,6 +88,7 @@
             function getHomework() {
                 var query2 = new Parse.Query(Homework);
                 query2.notEqualTo("Title", "Michael Yabuti");
+				query2.ascending("DueDate");
                 query2.find({
                     success: function(results2) {
                         for (var i = 0; i < results2.length; i++) {
@@ -122,7 +123,7 @@
 			function appendHomework() {
 				getHomework();
 				setTimeout(function(){ 
-					//alert('adsf');
+				
 					for(var i = 0; i < titals.length; i++) {
 						var num = d.getMonth();
 						var numOne = num + 1;
