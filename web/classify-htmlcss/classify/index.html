@@ -19,7 +19,7 @@
               emailjs.init("user_h9BWDbBSIN40Rm5ERva4a");
            })();
         </script>
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet">
     
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -301,7 +301,8 @@
                             hourglassOutline.src = "images/hourglassOutline.png"
                             context.drawImage(hourglassOutline,50,100);
 
-                            context.font = '2em Source Sans Pro Light';
+                            context.font = '300 2em Source Sans Pro';
+							context.fillStyle = "#666";
                             context.fillText('               Ray Bradbury\'s 3rd Grade Class', 50, 50);
 
 
@@ -312,33 +313,38 @@
                                         for (var i = 1; i < getName.length; i++) {
                                             if (i % 5 == 1) {
                                                 context.drawImage(hourglassOutline, 95, (i * 40) + 120);
-                                                context.font = '.8em Source Sans Pro Light';
+                                                context.font = '.8em Source Sans Pro';
                                                 context.textAlign="center";
+												context.fillStyle = "#666";
                                                 context.fillText(getName[i], 121, (i * 40) + 245);
                                                 context.fillText(getPoints[i], 121, (i * 40) + 270);
 
                                             } else if (i % 5 == 2) {
                                                 context.drawImage(hourglassOutline, 260, (i * 40) + 80);
-                                                context.font = '.8em Source Sans Pro Light';
+                                                context.font = '.8em Source Sans Pro';
                                                 context.textAlign="center";
+												context.fillStyle = "#666";
                                                 context.fillText(getName[i], 290, (i * 40) + 205);
                                                 context.fillText(getPoints[i], 290, (i * 40) + 230);
                                             } else if (i % 5 == 3) {
                                                 context.drawImage(hourglassOutline, 445, (i * 40) + 40);
-                                                context.font = '.8em Source Sans Pro Light';
+                                                context.font = '.8em Source Sans Pro';
                                                 context.textAlign="center";
+												context.fillStyle = "#666";
                                                 context.fillText(getName[i], 473, (i * 40) + 165);
                                                 context.fillText(getPoints[i], 473, (i * 40) + 190);
                                             } else if (i % 5 == 4) {
                                                 context.drawImage(hourglassOutline, 620, (i * 40) + 0);
-                                                context.font = '.8em Source Sans Pro Light';
+                                                context.font = '.8em Source Sans Pro';
                                                 context.textAlign="center";
+												context.fillStyle = "#666";
                                                 context.fillText(getName[i], 647, (i * 40) + 125);
                                                 context.fillText(getPoints[i], 647, (i * 40) + 150);
                                             } else if (i % 5 == 0) {
                                                 context.drawImage(hourglassOutline, 795, (i * 40) - 40);
-                                                context.font = '.8em Source Sans Pro Light';
+                                                context.font = '.8em Source Sans Pro';
                                                 context.textAlign="center";
+												context.fillStyle = "#666";
                                                 context.fillText(getName[i], 822, (i * 40) + 85);
                                                 context.fillText(getPoints[i], 822, (i * 40) + 110);
                                             }
