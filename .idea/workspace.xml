@@ -38,15 +38,15 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="295" column="58" selection-start-line="295" selection-start-column="58" selection-end-line="295" selection-end-column="58" />
+            <state relative-caret-position="217">
+              <caret line="456" column="0" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#canvas#1;n#div#0;n#div#0;n#section#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1478995866817" expanded="true" signature="5347:5357" ph="..." />
-                <marker date="1478995866817" expanded="true" signature="5441:5451" ph="..." />
-                <marker date="1478995866817" expanded="true" signature="5530:5540" ph="..." />
-                <marker date="1478995866817" expanded="true" signature="5856:5866" ph="..." />
-                <marker date="1478995866817" expanded="true" signature="5944:5954" ph="..." />
+                <marker date="1479016200502" expanded="true" signature="5380:5390" ph="..." />
+                <marker date="1479016200502" expanded="true" signature="5474:5484" ph="..." />
+                <marker date="1479016200502" expanded="true" signature="5563:5573" ph="..." />
+                <marker date="1479016200502" expanded="true" signature="5889:5899" ph="..." />
+                <marker date="1479016200502" expanded="true" signature="5977:5987" ph="..." />
               </folding>
             </state>
           </provider>
@@ -438,7 +438,7 @@
       <workItem from="1478930465439" duration="14443000" />
       <workItem from="1478968203648" duration="1544000" />
       <workItem from="1478972137618" duration="16000" />
-      <workItem from="1478987519872" duration="7313000" />
+      <workItem from="1478987519872" duration="26507000" />
     </task>
     <servers />
   </component>
@@ -457,7 +457,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23496000" />
+    <option name="totallyTimeSpent" value="42690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -690,15 +690,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/classify-htmlcss/classify/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="295" column="58" selection-start-line="295" selection-start-column="58" selection-end-line="295" selection-end-column="58" />
+        <state relative-caret-position="217">
+          <caret line="456" column="0" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#canvas#1;n#div#0;n#div#0;n#section#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1478995866817" expanded="true" signature="5347:5357" ph="..." />
-            <marker date="1478995866817" expanded="true" signature="5441:5451" ph="..." />
-            <marker date="1478995866817" expanded="true" signature="5530:5540" ph="..." />
-            <marker date="1478995866817" expanded="true" signature="5856:5866" ph="..." />
-            <marker date="1478995866817" expanded="true" signature="5944:5954" ph="..." />
+            <marker date="1479016200502" expanded="true" signature="5380:5390" ph="..." />
+            <marker date="1479016200502" expanded="true" signature="5474:5484" ph="..." />
+            <marker date="1479016200502" expanded="true" signature="5563:5573" ph="..." />
+            <marker date="1479016200502" expanded="true" signature="5889:5899" ph="..." />
+            <marker date="1479016200502" expanded="true" signature="5977:5987" ph="..." />
           </folding>
         </state>
       </provider>
