@@ -13,6 +13,12 @@
         <script defer src="packages/browser/dart.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		<script type="text/javascript">
+           (function(){
+              emailjs.init("user_h9BWDbBSIN40Rm5ERva4a");
+           })();
+        </script>
     
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -191,22 +197,13 @@
                     <li><a href="#welcome" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Welcome</span></a></li>
                     <li><a href="#calendar" id="calendar-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Assignments</span></a></li>
                     <li><a href="#points" id="points-link" class="skel-layers-ignoreHref"><span class="icon fa-user">View Your Points</span></a></li>
-                    <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">unknown</span></a></li>
+                    <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
                 </ul>
             </nav>
 
         </div>
 
         <div class="bottom">
-
-            <!-- Social Icons -->
-            <ul class="icons">
-                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-                <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-                <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
 
         </div>
 
@@ -392,15 +389,12 @@
             <div class="container">
 
                 <header>
-                    <h2>Contact - IDK what to do with this now</h2>
+                    <h2>Contact</h2>
                 </header>
 
-                <p>Elementum sem parturient nulla quam placerat viverra
-                    mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-                    donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-                    orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
+                <p>If you would like to get in contact with the teacher please type your name, email, and message below.</p>
 
-                <form method="post" action="#">
+                <form method="post" target="_blank" onsubmit="emailjs.sendForm('default_service', 'classify', this); alert('Message Sent'); return false;" action="#">
                     <div class="row">
                         <div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
                         <div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
