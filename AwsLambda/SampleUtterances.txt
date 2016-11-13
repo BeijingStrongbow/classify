@@ -1,0 +1,204 @@
+AddPoints give {Tyler|StudentName} {Points} points
+AddPoints give {Nolan|StudentName} {Points} points
+AddPoints give {Eric|StudentName} {Points} points
+AddPoints give {Stephanie|StudentName} {Points} points
+AddPoints give {Luann|StudentName} {Points} points
+AddPoints give {David|StudentName} {Points} points
+AddPoints give {Owen|StudentName} {Points} points
+AddPoints give {Tony|StudentName} {Points} points
+AddPoints give {Jamie|StudentName} {Points} points
+AddPoints give {Emily|StudentName} {Points} points
+AddPoints give {Molly|StudentName} {Points} points
+AddPoints give {Dan|StudentName} {Points} points
+AddPoints give {Caroline|StudentName} {Points} points
+AddPoints give {Anna|StudentName} {Points} points
+AddPoints give {Logan|StudentName} {Points} points
+
+AddPoints give {Points} points to {Tyler|StudentName}
+AddPoints give {Points} points to {Nolan|StudentName}
+AddPoints give {Points} points to {Eric|StudentName}
+AddPoints give {Points} points to {Stephanie|StudentName}
+AddPoints give {Points} points to {Luann|StudentName} 
+AddPoints give {Points} points to {David|StudentName}
+AddPoints give {Points} points to {Owen|StudentName}
+AddPoints give {Points} points to {Tony|StudentName}
+AddPoints give {Points} points to {Jamie|StudentName}
+AddPoints give {Points} points to {Emily|StudentName}
+AddPoints give {Points} points to {Molly|StudentName}
+AddPoints give {Points} points to {Dan|StudentName}
+AddPoints give {Points} points to {Caroline|StudentName}
+AddPoints give {Points} points to {Anna|StudentName} 
+AddPoints give {Points} points to {Logan|StudentName}
+
+RemovePoints remove {Points} points from {Tyler|StudentName}
+RemovePoints remove {Points} points from {Nolan|StudentName}
+RemovePoints remove {Points} points from {Eric|StudentName}
+RemovePoints remove {Points} points from {Stephanie|StudentName}
+RemovePoints remove {Points} points from {Caroline|StudentName}
+RemovePoints remove {Points} points from {Anna|StudentName}
+RemovePoints remove {Points} points from {Luann|StudentName}
+RemovePoints remove {Points} points from {David|StudentName}
+RemovePoints remove {Points} points from {Owen|StudentName}
+RemovePoints remove {Points} points from {Tony|StudentName}
+RemovePoints remove {Points} points from {Logan|StudentName}
+RemovePoints remove {Points} points from {Molly|StudentName}
+RemovePoints remove {Points} points from {Jamie|StudentName}
+RemovePoints remove {Points} points from {Emily|StudentName}
+RemovePoints remove {Points} points from {Dan|StudentName}
+
+RemovePoints subtract {Points} points from {Tyler|StudentName}
+RemovePoints subtract {Points} points from {Nolan|StudentName}
+RemovePoints subtract {Points} points from {Eric|StudentName}
+RemovePoints subtract {Points} points from {Stephanie|StudentName}
+RemovePoints subtract {Points} points from {Caroline|StudentName}
+RemovePoints subtract {Points} points from {Anna|StudentName}
+RemovePoints subtract {Points} points from {Luann|StudentName}
+RemovePoints subtract {Points} points from {David|StudentName}
+RemovePoints subtract {Points} points from {Owen|StudentName}
+RemovePoints subtract {Points} points from {Tony|StudentName}
+RemovePoints subtract {Points} points from {Logan|StudentName}
+RemovePoints subtract {Points} points from {Molly|StudentName}
+RemovePoints subtract {Points} points from {Jamie|StudentName}
+RemovePoints subtract {Points} points from {Emily|StudentName}
+RemovePoints subtract {Points} points from {Dan|StudentName}
+
+RemovePoints take {Points} points from {Owen|StudentName}
+RemovePoints take {Points} points from {Tony|StudentName}
+RemovePoints take {Points} points from {Jamie|StudentName}
+RemovePoints take {Points} points from {Molly|StudentName}
+RemovePoints take {Points} points from {Emily|StudentName}
+RemovePoints take {Points} points from {Dan|StudentName}
+RemovePoints take {Points} points from {Caroline|StudentName}
+RemovePoints take {Points} points from {Nolan|StudentName}
+RemovePoints take {Points} points from {Luann|StudentName}
+RemovePoints take {Points} points from {Stephanie|StudentName}
+RemovePoints take {Points} points from {David|StudentName}
+RemovePoints take {Points} points from {Logan|StudentName}
+RemovePoints take {Points} points from {Anna|StudentName}
+RemovePoints take {Points} points from {Tyler|StudentName}
+RemovePoints take {Points} points from {Eric|StudentName}
+
+RemovePoints take {Points} points away from {Owen|StudentName}
+RemovePoints take {Points} points away from {Tony|StudentName}
+RemovePoints take {Points} points away from {Jamie|StudentName}
+RemovePoints take {Points} points away from {Molly|StudentName}
+RemovePoints take {Points} points away from {Emily|StudentName}
+RemovePoints take {Points} points away from {Dan|StudentName}
+RemovePoints take {Points} points away from {Caroline|StudentName}
+RemovePoints take {Points} points away from {Nolan|StudentName}
+RemovePoints take {Points} points away from {Luann|StudentName}
+RemovePoints take {Points} points away from {Stephanie|StudentName}
+RemovePoints take {Points} points away from {David|StudentName}
+RemovePoints take {Points} points away from {Logan|StudentName}
+RemovePoints take {Points} points away from {Anna|StudentName}
+RemovePoints take {Points} points away from {Tyler|StudentName}
+RemovePoints take {Points} points away from {Eric|StudentName}
+
+AddAssignment add {test five|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {read chapter three|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {read chapter thirteen through eighteen|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {finish project|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {do problems forty through fifty|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {problems seventy two through eighty six even|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {do problems eleven through thirty three odd|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {read pages one through one hundred|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {quiz over chapter twelve|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {project due|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {test|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {project|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {quiz|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {do problems two to four|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {problems three to eleven|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {do problems thirteen to fifty odd|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {problem three eight nine fifteen and eighteen|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {do problem seventy two eighty three eighty four and ninety five|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {quiz four|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {test four|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {quiz two| AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {test two|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {quiz|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {quiz four|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {quiz one|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {quiz chapter three and four|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {quiz section one and two|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {homework two|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {homework four|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {homework thirty|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {homework chapter two to four|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {homework section four to seven|AssignmentName} on {DueDate} at {DueTime}
+AddAssignment add {chapter three though six due|AssignmentName}  on {DueDate} at {DueTime}
+AddAssignment add {homework problems nine to twenty due|AssignmentName}  on {DueDate} at {DueTime}
+AddAssignment add {take home test due|AssignmentName}  on {DueDate} at {DueTime}
+AddAssignment add {homework problems five through thirty two due|AssignmentName} on {DueDate} at {DueTime}
+
+AddAssignment add {test five|AssignmentName} on {DueDate}
+AddAssignment add {read chapter three|AssignmentName} on {DueDate}
+AddAssignment add {read chapter thirteen through eighteen|AssignmentName} on {DueDate}
+AddAssignment add {finish project|AssignmentName} on {DueDate}
+AddAssignment add {do problems forty through fifty|AssignmentName} on {DueDate}
+AddAssignment add {problems seventy two through eighty six even|AssignmentName} on {DueDate}
+AddAssignment add {do problems eleven through thirty three odd|AssignmentName} on {DueDate}
+AddAssignment add {read pages one through one hundred|AssignmentName} on {DueDate}
+AddAssignment add {quiz over chapter twelve|AssignmentName} on {DueDate}
+AddAssignment add {project due|AssignmentName} on {DueDate}
+AddAssignment add {test|AssignmentName} on {DueDate}
+AddAssignment add {project|AssignmentName} on {DueDate}
+AddAssignment add {quiz|AssignmentName} on {DueDate}
+AddAssignment add {do problems five to ten|AssignmentName} on {DueDate}
+AddAssignment add {problems three to eleven|AssignmentName} on {DueDate}
+AddAssignment add {do problems thirteen to fifty odd|AssignmentName} on {DueDate}
+AddAssignment add {problem three eight nine fifteen and eighteen|AssignmentName} on {DueDate}
+AddAssignment add {do problem seventy two eighty three eighty four and ninety five|AssignmentName} on {DueDate}
+AddAssignment add {test four|AssignmentName} on {DueDate}
+AddAssignment add {quiz two| AssignmentName} on {DueDate}
+AddAssignment add {test two|AssignmentName} on {DueDate}
+AddAssignment add {quiz|AssignmentName} on {DueDate}
+AddAssignment add {quiz four|AssignmentName} on {DueDate}
+AddAssignment add {quiz one|AssignmentName} on {DueDate}
+AddAssignment add {quiz chapter three and four|AssignmentName} on {DueDate}
+AddAssignment add {quiz section one and two|AssignmentName} on {DueDate}
+AddAssignment add {homework two|AssignmentName} on {DueDate}
+AddAssignment add {homework four|AssignmentName} on {DueDate}
+AddAssignment add {homework thirty|AssignmentName} on {DueDate}
+AddAssignment add {homework chapter two to four|AssignmentName} on {DueDate}
+AddAssignment add {homework section four to seven|AssignmentName} on {DueDate}
+AddAssignment add {chapter three though six due|AssignmentName} on {DueDate}
+AddAssignment add {homework problems nine to twenty due|AssignmentName} on {DueDate}
+AddAssignment add {take home test due|AssignmentName} on {DueDate}
+AddAssignment add {homework problems five through thirty two due|AssignmentName} on {DueDate}
+
+AddAssignment add {test five|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {read chapter three|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {read chapter thirteen through eighteen|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {finish project|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {do problems forty through fifty|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {problems seventy two through eighty six even|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {do problems eleven through thirty three odd|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {read pages one through one hundred|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {quiz over chapter twelve|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {project due|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {test|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {project|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {quiz|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {do problems five to ten|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {problems three to eleven|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {do problems thirteen to fifty odd|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {problem three eight nine fifteen and eighteen|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {do problem seventy two eighty three eighty four and ninety five|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {test four|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {quiz two| AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {test two|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {quiz|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {quiz four|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {quiz one|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {quiz chapter three and four|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {quiz section one and two|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {homework two|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {homework four|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {homework thirty|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {homework chapter two to four|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {homework section four to seven|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {chapter three though six due|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {homework problems nine to twenty due|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {take home test due|AssignmentName} at {DueTime} on {DueDate}
+AddAssignment add {homework problems five through thirty two due|AssignmentName} at {DueTime} on {DueDate}

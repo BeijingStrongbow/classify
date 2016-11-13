@@ -44,14 +44,20 @@ public class ClassifySpeechlet implements Speechlet{
 			else if(i.getName().equals("AddAssignment")){
 				String date = i.getSlot("DueDate").getValue();
 				String name = i.getSlot("AssignmentName").getValue();
+				if(name.substring(0,2).equals("a ")){
+					name = name.substring(2);
+				}
+				
 				name = name.substring(0,1).toUpperCase() + name.substring(1);
 				String time = i.getSlot("DueTime").getValue();
 				
 				String month = date.substring(5, 7);
+				int monthAsInt = Integer.parseInt(month);
 				String day = date.substring(8, 10);
+				int dayAsInt = Integer.parseInt(day);
 				
 				try{
-					switch(Integer.parseInt(month)){
+					switch(monthAsInt){
 						case 1:
 							date = "January " + day;
 							break;
@@ -108,7 +114,7 @@ public class ClassifySpeechlet implements Speechlet{
 					}
 					
 					output.setText("Added assignment " + name + " on " + date);
-					assignmentParse(name, date);
+					assignmentParse(name, date, monthAsInt, dayAsInt);
 				}
 				catch(NumberFormatException ex){
 					output.setText("Please specify a specific date not a week or weekend");
@@ -186,7 +192,7 @@ public class ClassifySpeechlet implements Speechlet{
 		
 	}
 	
-	private void assignmentParse(String name, String date){
+	private void assignmentParse(String name, String date, int monthAsInt, int dayAsInt){
 		
 		Parse.initialize("qsJqqoI6URL9MTUSMNHfdjtz7yeVQVHTxQLyThmc", "YUtYFESPDjjFtgp5eMgvdLh1p2vvMVjXcxIpTxBF");
     	
@@ -194,6 +200,8 @@ public class ClassifySpeechlet implements Speechlet{
 		
 		assignment.put("Title", name);
 		assignment.put("DueDate", date);
+		assignment.put("Month", monthAsInt);
+		assignment.put("DayOfMonth", dayAsInt);
 		try {
 			assignment.save();
 		} catch (org.parse4j.ParseException e) {

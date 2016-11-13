@@ -1,0 +1,47 @@
+{
+  "intents": [
+    {
+      "intent": "AddPoints",
+      "slots": [
+      	{
+          "name": "StudentName",
+          "type": "AMAZON.LITERAL"
+        },
+        {
+          "name": "Points",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "RemovePoints",
+      "slots": [
+      	{
+          "name": "StudentName",
+          "type": "AMAZON.LITERAL"
+        },
+        {
+          "name": "Points",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "AddAssignment",
+      "slots": [
+      	{
+      		"name": "AssignmentName",
+          	"type": "AMAZON.LITERAL"
+    	},
+        {
+          "name": "DueDate",
+          "type": "AMAZON.DATE"
+        },
+        {
+          "name": "DueTime",
+          "type": "AMAZON.TIME"
+        }
+      ]
+    }
+  ]
+}
