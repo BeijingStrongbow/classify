@@ -1,0 +1,1 @@
+Just starting this for Hack K-State 2016! It's going to manage a classroom by giving "points" to students based on behavior. It will also manage a calendar with due dates, and will text reminders to students.
