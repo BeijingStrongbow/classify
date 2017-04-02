@@ -7,12 +7,12 @@
     <meta name="scaffolded-by" content="https://github.com/google/stagehand">
     <title>classify</title>
     <script defer src="hourglassMain.dart" type="application/dart"></script>
-    <link rel="stylesheet" href="styles.css">
+    <!--<link rel="stylesheet" href="styles.css">-->
     <link rel="stylesheet" href="assets/css/calendar.css" />
     <link rel="stylesheet" href="assets/css/oldmain.css" />
-    <script defer src="packages/browser/dart.js"></script>
+    <!--<script defer src="packages/browser/dart.js"></script>-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+    <!--<script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>-->
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
@@ -24,6 +24,7 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <script type="text/javascript">
+		/*
         Parse.initialize("qsJqqoI6URL9MTUSMNHfdjtz7yeVQVHTxQLyThmc", "U47TxX0ULDwFdlj25QRpGdiKTRZ0BRabN5phaYEO");
 
         var Points = Parse.Object.extend("Points");
@@ -39,8 +40,8 @@
         var month = [11];
         var day = [11];
 
-        var getName = ["aa"];
-        var getPoints = ["aa"];
+        var names = ["aa"];
+        var points = ["aa"];
         var calibration = 0;
 
         function updatePoints(name, points) {
@@ -69,7 +70,7 @@
              * month is abbreviated form
              * day is number, if single digit number like the fith, write as 05
              * time is 24 hours, if single digit hour of minute like 3, write as 03
-             */
+             
             homework.set("Title", newTitle);
             homework.set("DueDate", newDueDate);
             homework.set("Description", newDescription);
@@ -119,8 +120,8 @@
             query3.find({
                 success: function(results3) {
                     for (var i = 0; i < results3.length; i++) {
-                        getName[i] = results3[i].get("Name");
-                        getPoints[i] = results3[i].get("Points");
+                        names[i] = results3[i].get("Name");
+                        points[i] = results3[i].get("Points");
                     }
                 },
                 error: function(error3) {
@@ -154,13 +155,12 @@
         function appendPoints() {
             getTotalPoints();
             setTimeout(function() {
-                for(var i = 0; i < getName.length; i++) {
-                    $(".pointTotals").append("<div class='assignments'><ul><li style='float:left'><div class='containername'><h3>" + getName[i] + "</h3></div></li><li style='float:left'><div class='containerpoints'><h3>" + getPoints[i] + "</h3></div></li></ul></div>");
+                for(var i = 0; i < names.length; i++) {
+                    $(".pointTotals").append("<div class='assignments'><ul><li style='float:left'><div class='containername'><h3>" + names[i] + "</h3></div></li><li style='float:left'><div class='containerpoints'><h3>" + points[i] + "</h3></div></li></ul></div>");
                 }
 
             }, 750);
         }
-
         appendHomework();
         appendPoints();
         //addPeople("Pizza Man", 5000);
@@ -168,9 +168,98 @@
         //addHomework("HW 3", "Nov 14 03:34", "Third Homework");
         //updateHomework("HW 3", "Nov 15 23:34");
         //getHomework();
-        //getPoints();
+        //points();
+		
+		*/
 
     </script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+	<script>
+	    // Initialize Firebase
+	    var config = {
+		    apiKey: "AIzaSyB38FxH34kl_Uh1u9i1NPRvjWjo6MQLLFM",
+		    authDomain: "classify-ee6f2.firebaseapp.com",
+		    databaseURL: "https://classify-ee6f2.firebaseio.com",
+		    storageBucket: "classify-ee6f2.appspot.com",
+		    messagingSenderId: "1073326273141"
+	      };
+	    firebase.initializeApp(config);
+		
+		var database = firebase.database();
+		var totalLocation = 0;
+		var toAddToLocation = 1;
+		var total = 0;
+		
+		var titles = ["aa"];
+        var monthsDue = ["aa"];
+        var daysDue = ["aa"];
+        var timesDue = ["aa"];
+		var spot = 0;
+		var spot2 = 0;
+		
+		var names = ["aa"];
+		var points = [11];
+		
+		/*
+		 * Will add homework to the database with a unique id everytime you call it. If called twice or more in a  * row duplicate imformation can orrur.
+		 * @param title of the homework due
+		 * @param month that the homework is due
+		 * @param day that the homework is due from the month above
+		 * @param time that homework is due on day and month above
+		 */
+		function addHomework(title, month, day, time) {
+		    database.ref("Assignments/").push({
+			    title: title,
+			    monthDue: month,
+				dayDue: day,
+				timeDue: time
+		    });
+		}
+		
+		function addPeople(name, points) {
+			if (points >= 0 && points <= 100) {
+				database.ref("People/").push({
+			    name: name,
+				points: points
+		    });
+			}
+		}
+		
+		function points() {
+			var getRef = database.ref("People/");
+			getRef.on('child_added', function(snapshot) {
+				names[spot2] = snapshot.val().name;
+				points[spot2] = snapshot.val().points;
+				spot2++;
+			});
+		}
+		
+		function getHomework() {
+			var getRef = database.ref("Assignments/");
+			getRef.on('child_added', function(snapshot) {
+				titles[spot] = snapshot.val().title;
+				monthsDue[spot] = snapshot.val().monthDue;
+				daysDue[spot] = snapshot.val().dayDue;
+				timesDue[spot] = snapshot.val().timeDue;
+				spot++;
+			});
+		}
+		
+		function appendHomework() {
+			getHomework();
+			setTimeout(function() {
+				for(var i = 0; i < spot; i++) {
+					$(".assignments").append("<ul> <li style='float:left'><div class='containerassignment'> <h3>" + titles[i] + "</h3></div></li><li style='float:left'><div class='containerdate'><h3>" + monthsDue[i] + " " + daysDue[i] + " " + timesDue[i] + "</h3></div></li></ul>");
+				}
+			}, 500);
+		}
+		
+		//getHomework();
+		//addHomework("Science Homework", "June", "22", "16:30");
+		appendHomework();
+		points();
+		
+	</script>
 </head>
 <body>
 
@@ -306,30 +395,30 @@
                         context.fillText('               Ray Bradbury\'s 3rd Grade Class', 50, 50);
                         hourglassOutline.onload = function () {
                             setTimeout(function(){
-                                //alert(getName.length);
-                                for (var i = 0; i < getName.length; i++) {
+                                //alert(names.length);
+                                for (var i = 0; i < names.length; i++) {
                                     fontYO()
                                     if (i % 5 == 0) {
                                         context.drawImage(hourglassOutline, 95, (i * 40) + 120, 55, 93);
-                                        context.fillText(getName[i], 125, (i * 40) + 245);
-                                        context.fillText(getPoints[i], 125, (i * 40) + 270);
+                                        context.fillText(names[i], 125, (i * 40) + 245);
+                                        context.fillText(points[i], 125, (i * 40) + 270);
                                         //context.fillText(i, 110, (i * 40) + 270);
                                     } else if (i % 5 == 1) {
                                         context.drawImage(hourglassOutline, 260, (i * 40) + 80, 55, 93);
-                                        context.fillText(getName[i], 290, (i * 40) + 205);
-                                        context.fillText(getPoints[i], 290, (i * 40) + 230);
+                                        context.fillText(names[i], 290, (i * 40) + 205);
+                                        context.fillText(points[i], 290, (i * 40) + 230);
                                     } else if (i % 5 == 2) {
                                         context.drawImage(hourglassOutline, 445, (i * 40) + 40, 55, 93);
-                                        context.fillText(getName[i], 473, (i * 40) + 165);
-                                        context.fillText(getPoints[i], 473, (i * 40) + 190);
+                                        context.fillText(names[i], 473, (i * 40) + 165);
+                                        context.fillText(points[i], 473, (i * 40) + 190);
                                     } else if (i % 5 == 3) {
                                         context.drawImage(hourglassOutline, 620, (i * 40) + 0, 55, 93);
-                                        context.fillText(getName[i], 650, (i * 40) + 125);
-                                        context.fillText(getPoints[i], 650, (i * 40) + 150);
+                                        context.fillText(names[i], 650, (i * 40) + 125);
+                                        context.fillText(points[i], 650, (i * 40) + 150);
                                     } else if (i % 5 == 4 ) {
                                         context.drawImage(hourglassOutline, 795, (i * 40) - 40, 55, 93);
-                                        context.fillText(getName[i], 815, (i * 40) + 85);
-                                        context.fillText(getPoints[i], 815, (i * 40) + 110);
+                                        context.fillText(names[i], 815, (i * 40) + 85);
+                                        context.fillText(points[i], 815, (i * 40) + 110);
                                     }
                                 }
                             }, 800);
@@ -338,14 +427,14 @@
                         function drawSandB(i, x1, x2, x3, x4, y, ratio) {
                             context.beginPath();
                             context.moveTo(x1, y);
-                            context.lineTo(x2, y-(getPoints[i]*ratio));
+                            context.lineTo(x2, y-(points[i]*ratio));
                             context.lineTo(x3, y);
                             context.lineTo(x4, y);
                             context.fillStyle = "rgba(0, 121, 156, 1)";
                         }
                         //sand BOTTOM
                         setTimeout(function(){
-                            for (var i = 0; i < getName.length; i++) {
+                            for (var i = 0; i < names.length; i++) {
                                 if (i % 5 == 0) {
                                     if (i == 0) drawSandB(i, 97, 122.5, 148, 97, 213, .42);
                                     else if (i == 5) drawSandB(i, 97, 122.5, 148, 97, 413, .42);
@@ -374,109 +463,109 @@
                                 context.fillStyle = "#000000";
                             }
                             //sand TOP
-                            for (var i = 0; i < getName.length; i++) {
-                                if (getPoints[i] != 100) {
-                                    if (getPoints[i] <= 45) calibrate = 0.42;
+                            for (var i = 0; i < names.length; i++) {
+                                if (points[i] != 100) {
+                                    if (points[i] <= 45) calibrate = 0.42;
                                     else calibrate = 0.3;
                                     if (i % 5 == 0) {
                                         if (i == 0) {
                                             context.beginPath();
-                                            context.moveTo(97+(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
+                                            context.moveTo(97+(points[i]*.16), 120+((points[i])*calibrate));
                                             context.lineTo(122.5, 165);
-                                            context.lineTo(148-(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
-                                            context.lineTo(97, 120+((getPoints[i])*calibrate));
+                                            context.lineTo(148-(points[i]*.16), 120+((points[i])*calibrate));
+                                            context.lineTo(97, 120+((points[i])*calibrate));
                                         } else if (i == 5) {
                                             context.beginPath();
-                                            context.moveTo(97+(getPoints[i]*.16), 320+((getPoints[i])*calibrate));
+                                            context.moveTo(97+(points[i]*.16), 320+((points[i])*calibrate));
                                             context.lineTo(122.5, 365);
-                                            context.lineTo(148-(getPoints[i]*.16), 320+((getPoints[i])*calibrate));
-                                            context.lineTo(97, 320+((getPoints[i])*calibrate));
+                                            context.lineTo(148-(points[i]*.16), 320+((points[i])*calibrate));
+                                            context.lineTo(97, 320+((points[i])*calibrate));
                                         } else if (i == 10) {
                                             context.beginPath();
-                                            context.moveTo(97+(getPoints[i]*.16), 520+((getPoints[i])*calibrate));
+                                            context.moveTo(97+(points[i]*.16), 520+((points[i])*calibrate));
                                             context.lineTo(122.5, 565);
-                                            context.lineTo(148-(getPoints[i]*.16), 520+((getPoints[i])*calibrate));
-                                            context.lineTo(97, 520+((getPoints[i])*calibrate));
+                                            context.lineTo(148-(points[i]*.16), 520+((points[i])*calibrate));
+                                            context.lineTo(97, 520+((points[i])*calibrate));
                                         }
                                     } else if (i % 5 == 1) {
                                         if (i == 1) {
                                             context.beginPath();
-                                            context.moveTo(262+(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
+                                            context.moveTo(262+(points[i]*.16), 120+((points[i])*calibrate));
                                             context.lineTo(287.5, 165);
-                                            context.lineTo(313-(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
-                                            context.lineTo(262, 120+((getPoints[i])*calibrate));
+                                            context.lineTo(313-(points[i]*.16), 120+((points[i])*calibrate));
+                                            context.lineTo(262, 120+((points[i])*calibrate));
                                         } else if (i == 6) {
                                             context.beginPath();
-                                            context.moveTo(262+(getPoints[i]*.16), 320+((getPoints[i])*calibrate));
+                                            context.moveTo(262+(points[i]*.16), 320+((points[i])*calibrate));
                                             context.lineTo(287.5, 365);
-                                            context.lineTo(313-(getPoints[i]*.16), 320+((getPoints[i])*calibrate));
-                                            context.lineTo(262, 320+((getPoints[i])*calibrate));
+                                            context.lineTo(313-(points[i]*.16), 320+((points[i])*calibrate));
+                                            context.lineTo(262, 320+((points[i])*calibrate));
                                         } else if (i == 11) {
                                             context.beginPath();
-                                            context.moveTo(262+(getPoints[i]*.16), 520+((getPoints[i])*calibrate));
+                                            context.moveTo(262+(points[i]*.16), 520+((points[i])*calibrate));
                                             context.lineTo(287.5, 565);
-                                            context.lineTo(313-(getPoints[i]*.16), 520+((getPoints[i])*calibrate));
-                                            context.lineTo(262, 520+((getPoints[i])*calibrate));
+                                            context.lineTo(313-(points[i]*.16), 520+((points[i])*calibrate));
+                                            context.lineTo(262, 520+((points[i])*calibrate));
                                         }
                                     } else if (i % 5 == 2) {
                                         if (i == 2) {
                                             context.beginPath();
-                                            context.moveTo(447+(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
+                                            context.moveTo(447+(points[i]*.16), 120+((points[i])*calibrate));
                                             context.lineTo(472.5, 165);
-                                            context.lineTo(498-(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
-                                            context.lineTo(447, 120+((getPoints[i])*calibrate));
+                                            context.lineTo(498-(points[i]*.16), 120+((points[i])*calibrate));
+                                            context.lineTo(447, 120+((points[i])*calibrate));
                                         } else if (i == 7) {
                                             context.beginPath();
-                                            context.moveTo(447+(getPoints[i]*.16), 320+((getPoints[i])*calibrate));
+                                            context.moveTo(447+(points[i]*.16), 320+((points[i])*calibrate));
                                             context.lineTo(472.5, 365);
-                                            context.lineTo(498-(getPoints[i]*.16), 320+((getPoints[i])*calibrate));
-                                            context.lineTo(447, 320+((getPoints[i])*calibrate));
+                                            context.lineTo(498-(points[i]*.16), 320+((points[i])*calibrate));
+                                            context.lineTo(447, 320+((points[i])*calibrate));
                                         } else if (i == 12) {
                                             context.beginPath();
-                                            context.moveTo(447+(getPoints[i]*.16), 520+((getPoints[i])*calibrate));
+                                            context.moveTo(447+(points[i]*.16), 520+((points[i])*calibrate));
                                             context.lineTo(472.5, 565);
-                                            context.lineTo(498-(getPoints[i]*.16), 520+((getPoints[i])*calibrate));
-                                            context.lineTo(447, 520+((getPoints[i])*calibrate));
+                                            context.lineTo(498-(points[i]*.16), 520+((points[i])*calibrate));
+                                            context.lineTo(447, 520+((points[i])*calibrate));
                                         }
                                     } else if (i % 5 == 3) {
                                         if (i == 3) {
                                             context.beginPath();
-                                            context.moveTo(622+(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
+                                            context.moveTo(622+(points[i]*.16), 120+((points[i])*calibrate));
                                             context.lineTo(647.5, 165);
-                                            context.lineTo(673-(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
-                                            context.lineTo(622, 120+((getPoints[i])*calibrate));
+                                            context.lineTo(673-(points[i]*.16), 120+((points[i])*calibrate));
+                                            context.lineTo(622, 120+((points[i])*calibrate));
                                         } else if (i == 8) {
                                             context.beginPath();
-                                            context.moveTo(622+(getPoints[i]*.16), 320+((getPoints[i])*calibrate));
+                                            context.moveTo(622+(points[i]*.16), 320+((points[i])*calibrate));
                                             context.lineTo(647.5, 365);
-                                            context.lineTo(673-(getPoints[i]*.16), 320+((getPoints[i])*calibrate));
-                                            context.lineTo(622, 320+((getPoints[i])*calibrate));
+                                            context.lineTo(673-(points[i]*.16), 320+((points[i])*calibrate));
+                                            context.lineTo(622, 320+((points[i])*calibrate));
                                         } else if (i == 13) {
                                             context.beginPath();
-                                            context.moveTo(622+(getPoints[i]*.16), 520+((getPoints[i])*calibrate));
+                                            context.moveTo(622+(points[i]*.16), 520+((points[i])*calibrate));
                                             context.lineTo(647.5, 565);
-                                            context.lineTo(673-(getPoints[i]*.16), 520+((getPoints[i])*calibrate));
-                                            context.lineTo(622, 520+((getPoints[i])*calibrate));
+                                            context.lineTo(673-(points[i]*.16), 520+((points[i])*calibrate));
+                                            context.lineTo(622, 520+((points[i])*calibrate));
                                         }
                                     } else if (i % 5 == 4) {
                                         if (i == 4) {
                                             context.beginPath();
-                                            context.moveTo(797+(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
+                                            context.moveTo(797+(points[i]*.16), 120+((points[i])*calibrate));
                                             context.lineTo(822.5, 165);
-                                            context.lineTo(848-(getPoints[i]*.16), 120+((getPoints[i])*calibrate));
-                                            context.lineTo(797, 120+((getPoints[i])*calibrate));
+                                            context.lineTo(848-(points[i]*.16), 120+((points[i])*calibrate));
+                                            context.lineTo(797, 120+((points[i])*calibrate));
                                         } else if (i == 9) {
                                             context.beginPath();
-                                            context.moveTo(797+(getPoints[i]*.16), 320+((getPoints[i])*calibrate));
+                                            context.moveTo(797+(points[i]*.16), 320+((points[i])*calibrate));
                                             context.lineTo(822.5, 365);
-                                            context.lineTo(848-(getPoints[i]*.16), 320+((getPoints[i])*calibrate));
-                                            context.lineTo(797, 320+((getPoints[i])*calibrate));
+                                            context.lineTo(848-(points[i]*.16), 320+((points[i])*calibrate));
+                                            context.lineTo(797, 320+((points[i])*calibrate));
                                         } else if (i == 14) {
                                             context.beginPath();
-                                            context.moveTo(797+(getPoints[i]*.16), 520+((getPoints[i])*calibrate));
+                                            context.moveTo(797+(points[i]*.16), 520+((points[i])*calibrate));
                                             context.lineTo(822.5, 565);
-                                            context.lineTo(848-(getPoints[i]*.16), 520+((getPoints[i])*calibrate));
-                                            context.lineTo(797, 520+((getPoints[i])*calibrate));
+                                            context.lineTo(848-(points[i]*.16), 520+((points[i])*calibrate));
+                                            context.lineTo(797, 520+((points[i])*calibrate));
                                         }
                                     }
                                     context.closePath();
