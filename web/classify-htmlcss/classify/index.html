@@ -225,7 +225,7 @@
 			}
 		}
 		
-		function points() {
+		function updatePoints() {
 			var getRef = database.ref("People/");
 			getRef.on('child_added', function(snapshot) {
 				names[spot2] = snapshot.val().name;
@@ -251,13 +251,13 @@
 				for(var i = 0; i < spot; i++) {
 					$(".assignments").append("<ul> <li style='float:left'><div class='containerassignment'> <h3>" + titles[i] + "</h3></div></li><li style='float:left'><div class='containerdate'><h3>" + monthsDue[i] + " " + daysDue[i] + " " + timesDue[i] + "</h3></div></li></ul>");
 				}
-			}, 500);
+			}, 1000);
 		}
 		
 		//getHomework();
 		//addHomework("Science Homework", "June", "22", "16:30");
 		appendHomework();
-		points();
+		updatePoints();
 		
 	</script>
 </head>
