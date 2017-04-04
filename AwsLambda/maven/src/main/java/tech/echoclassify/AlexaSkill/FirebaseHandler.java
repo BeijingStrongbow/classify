@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
+
 import com.google.firebase.*;
 import com.google.firebase.auth.FirebaseCredentials;
 import com.google.firebase.database.DataSnapshot;
@@ -12,6 +14,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.test.Test.Main.Assignment;
 
 public class FirebaseHandler {
 
@@ -22,8 +25,6 @@ public class FirebaseHandler {
 	private DatabaseReference readPeople;
 	
 	private int points;
-	
-	private boolean done = false;
 	
 	private static FirebaseHandler instance = null;
 	
@@ -55,24 +56,27 @@ public class FirebaseHandler {
 		FirebaseApp.initializeApp(options);
 		
 		pushAssignments = FirebaseDatabase.getInstance().getReference("Assignments").push();
-		setPeople = FirebaseDatabase.getInstance().getReference("People").push();
+		setPeople = FirebaseDatabase.getInstance().getReference("People");
 		
 		readAssignments = FirebaseDatabase.getInstance().getReference("Assignments");
-		readPeople = FirebaseDatabase.getInstance().getReference("People").push();
+		readPeople = FirebaseDatabase.getInstance().getReference("People");
 	}
 	
-	private static class Person{
+	private static class Assignment{
 		
-		private String name;
-		private int points;
+		public int dayDue;
+		public String monthDue;
+		public String timeDue;
+		public String title;
 		
-		private Person(String name, int points){
-			this.name = name;
-			this.points = points;
+		private Assignment(int dayDue, String monthDue, String timeDue, String title){
+			this.dayDue = dayDue;
+			this.monthDue = monthDue;
+			this.timeDue = timeDue;
+			this.title = title;
 		}
 		
 	}
-	
 	
 	/**
 	 * Give points to someone
@@ -82,7 +86,9 @@ public class FirebaseHandler {
 	 * @return The number of points the person now has
 	 */
 	public int addPoints(final String name, final int numPoints){
-
+		
+		final CountDownLatch latch = new CountDownLatch(1);
+		
 		readPeople.addListenerForSingleValueEvent(new ValueEventListener(){
 
 			public void onCancelled(DatabaseError snapshot) {
@@ -92,16 +98,28 @@ public class FirebaseHandler {
 			public void onDataChange(DataSnapshot snapshot) {
 				DataSnapshot person = snapshot.child(name);
 				
-				points = Integer.parseInt(person.child("points").toString());
-				points += numPoints;
-				person.getRef().child("points").setValue(points);
-				done = true;
+				if(snapshot.hasChild(name)){
+					points = Integer.parseInt(person.child("points").getValue().toString());
+					points += numPoints;
+					
+					if(points > 100){
+						points = 100;
+					}
+					
+					person.getRef().child("points").setValue(points);
+				}
+				else{
+					person.getRef().child("points").setValue(numPoints);
+				}
+				latch.countDown();
 			}
 			
 		});
-		
-		while(!done){}
-		done = false;
+		try{
+			latch.await();
+		}
+		catch(InterruptedException ex){}
+
 		return points;
 	}
 	
@@ -113,6 +131,9 @@ public class FirebaseHandler {
 	 * @return The number of points the person now has
 	 */
 	public int subtractPoints(final String name, final int numPoints){
+		
+		final CountDownLatch latch = new CountDownLatch(1);
+		
 		readPeople.addListenerForSingleValueEvent(new ValueEventListener(){
 
 			public void onCancelled(DatabaseError snapshot) {
@@ -121,32 +142,71 @@ public class FirebaseHandler {
 
 			public void onDataChange(DataSnapshot snapshot) {
 				DataSnapshot person = snapshot.child(name);
-				
-				points = Integer.parseInt(person.child("points").toString());
-				points -= numPoints;
-				person.getRef().child("points").setValue(points);
-				done = true;
+				if(person.exists()){
+					points = Integer.parseInt(person.child("points").getValue().toString());
+					points -= numPoints;
+					
+					if(points < 0){
+						points = 0;
+					}
+					
+					person.getRef().child("points").setValue(points);
+				}
+				else{
+					person.getRef().child("points").setValue(0);
+				}
+				latch.countDown();
 			}
 			
 		});
 		
-		while(!done){}
-		done = false;
+		try{
+			latch.await();
+		}
+		catch(InterruptedException ex){}
+		
 		return points;
 	}
 	
 	/**
-	 * Add an assignment to the database
+	 * Add an assignment to the database that is due at a specific time
 	 * 
-	 * @param name The name of the assignment to add
-	 * @param date The due date for the assignment as a string
-	 * @param monthAsInt The month the assignment is due in, as an int (i.e. January is 1, Feburary is 2, etc.)
-	 * @param dayAsInt The day of the month the assignemnt is due in
+	 * @param dayDue The day of the month the assignment is due
+	 * @param monthDue The month the assignment is due in
+	 * @param timeDue The time the assignment is due
+	 * @param name The name of the assignment
 	 */
-	public void addAssignment(String name, String date, int monthAsInt, int dayAsInt){
-		
-			
+	public void addAssignment(int dayDue, String monthDue, String timeDue, String name){
+		_addAssignment(dayDue, monthDue, timeDue, name);
 	}
+	
+	/**
+	 * Add and assignment to the database that is not due at a specific time
+	 * 
+	 * @param dayDue The day of the month the assignment is due
+	 * @param monthDue The month the assignment is due in
+	 * @param name The name of the assignment
+	 */
+	public void addAssignment(int dayDue, String monthDue, String name){
+		_addAssignment(dayDue, monthDue, "00:00", name);
+	}
+	
+	/**
+	 * Internally used to add an assignment to the database.
+	 * 
+	 * @param dayDue The day of the month the assignment is due
+	 * @param monthDue The month the assignment is due in
+	 * @param timeDue The time the assignment is due
+	 * @param name The name of the assignment
+	 */
+	private void _addAssignment(int dayDue, String monthDue, String timeDue, String name){
+		pushAssignments.setValue(new Assignment(dayDue, monthDue, timeDue, processAssignmentName(name)));
+	}
+	
+	/**
+	 * The value to return in removeAssignment(String name)
+	 */
+	private volatile boolean toReturn = false;
 	
 	/**
 	 * Make the students happy and remove an assignment from the database
@@ -154,9 +214,37 @@ public class FirebaseHandler {
 	 * @param name The name of the assignment to remove
 	 * @return Whether the assignment was removed successfully
 	 */
-	public boolean removeAssignment(String name){
+	public boolean removeAssignment(final String name){
+		final CountDownLatch latch = new CountDownLatch(1);
 		
-		return true;
+		readAssignments.addListenerForSingleValueEvent(new ValueEventListener(){
+
+			public void onCancelled(DatabaseError arg0) {}
+
+			public void onDataChange(DataSnapshot snapshot) {
+				for(DataSnapshot s : snapshot.getChildren()){
+					if(s.child("title").getValue().toString().toLowerCase().equals(processAssignmentName(name).toLowerCase())){
+						toReturn = true;
+						snapshot.getRef().child(s.getKey()).setValue(null);
+						latch.countDown();
+					}
+				}
+				
+				if(!toReturn){
+					latch.countDown();
+				}
+			}
+			
+		});
+		
+		try{
+			latch.await();
+		}
+		catch(InterruptedException ex){}
+		
+		boolean toReturnTemp = toReturn;
+		toReturn = false;
+		return toReturnTemp;
 	}
 	
 	/**
@@ -166,6 +254,9 @@ public class FirebaseHandler {
 	 * @return The number of points the person has
 	 */
 	public int getPoints(final String name){
+		
+		final CountDownLatch latch = new CountDownLatch(1);
+		
 		readPeople.addListenerForSingleValueEvent(new ValueEventListener(){
 
 			public void onCancelled(DatabaseError snapshot) {
@@ -175,15 +266,24 @@ public class FirebaseHandler {
 			public void onDataChange(DataSnapshot snapshot) {
 				DataSnapshot person = snapshot.child(name);
 				
-				points = Integer.parseInt(person.child("points").toString());
+				if(person.exists()){
+					points = Integer.parseInt(person.child("points").getValue().toString());
+				}
+				else{
+					points = 0;
+				}
 				person.getRef().child("points").setValue(points);
-				done = true;
+				
+				latch.countDown();
 			}
 			
 		});
+
+		try{
+			latch.await();
+		}
+		catch(InterruptedException ex){}
 		
-		while(!done){}
-		done = false;
 		return points;
 	}
 	
@@ -199,7 +299,6 @@ public class FirebaseHandler {
 		String[] input = name.split(" ");
 		
 		for(int i = 0; i < input.length; i++){
-			System.out.println(input[i]);
 			if(input[i].equals("zero")){
 				output.append(0 + " ");
 			}
@@ -270,12 +369,51 @@ public class FirebaseHandler {
 		return output.toString();
 	}
 	
+	private String studentWithMostPoints = "";
+	
+	private int mostPoints = 0;
+	
 	/**
 	 * Get the person who has the most points
 	 * 
 	 * @return The name of the person with the most points
 	 */
 	public String getGreatestPoints(){
-		return "";
+		final CountDownLatch latch = new CountDownLatch(1);
+		
+		readPeople.addListenerForSingleValueEvent(new ValueEventListener(){
+
+			public void onCancelled(DatabaseError arg0) {}
+
+			public void onDataChange(DataSnapshot data) {
+				for(DataSnapshot s : data.getChildren()){
+					String name = s.getKey();
+					int points = Integer.parseInt(s.child("points").getValue().toString());
+					
+					if(studentWithMostPoints.equals("")){
+						studentWithMostPoints = name;
+						mostPoints = points;
+					}
+					else if(points == mostPoints){
+						studentWithMostPoints += ", " + s.getKey();
+					}
+					else if(points > mostPoints){
+						studentWithMostPoints = name;
+						mostPoints = points;
+					}
+				}
+				
+				latch.countDown();
+			}
+			
+		});
+		
+		try{
+			latch.await();
+		}
+		catch(InterruptedException ex){}
+		String studentTemp = studentWithMostPoints;
+		studentWithMostPoints = "";
+		return studentTemp;
 	}
 }

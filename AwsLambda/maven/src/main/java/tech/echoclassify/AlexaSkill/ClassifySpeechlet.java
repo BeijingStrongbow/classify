@@ -22,9 +22,7 @@ public class ClassifySpeechlet implements Speechlet{
 	
 	@SuppressWarnings("unused")
 	public SpeechletResponse onIntent(IntentRequest request, Session session) throws SpeechletException {
-		
-		
-		
+
 		Intent i = request.getIntent();
 		
 		SpeechletResponse response = new SpeechletResponse();
@@ -155,46 +153,45 @@ public class ClassifySpeechlet implements Speechlet{
 				try{
 					switch(monthAsInt){
 						case 1:
-							date = "January " + day;
+							month = "January";
 							break;
 						case 2:
-							date = "February " + day;
+							month = "February";
 							break;
 						case 3:
-							date = "March " + day;
+							month = "March";
 							break;
 						case 4:
-							date = "April " + day;
+							date = "April";
 							break;
 						case 5:
-							date = "May " + day;
+							month = "May";
 							break;
 						case 6:
-							date = "June " + day;
+							month = "June";
 							break;
 						case 7:
-							date = "July " + day;
+							month = "July";
 							break;
 						case 8:
-							date = "August " + day;
+							month = "August";
 							break;
 						case 9:
-							date = "September " + day;
+							month = "September";
 							break;
 						case 10:
-							date = "October " + day;
+							month = "October";
 							break;
 						case 11:
-							date = "November " + day;
+							month = "November";
 							break;
 						case 12:
-							date = "December " + day;
+							month = "December";
 							break;
 					}
 					
 					if(time == null || time.equals("no") || time.equals("nah bro")){
-						time = "All day";
-						date += ", " + time;
+						database.addAssignment(dayAsInt, month, name);
 					}
 					else if(Integer.parseInt(time.substring(0, 2)) > 12){
 						time = (Integer.parseInt(time.substring(0, 2)) - 12) + time.substring(2) + " pm";
@@ -206,11 +203,9 @@ public class ClassifySpeechlet implements Speechlet{
 						}
 						
 						time += " am";
-						date += ", " + time;
 					}
-					
+					database.addAssignment(dayAsInt, month, time, name);
 					output.setText("Alright, I added " + name + " on " + date);
-					database.addAssignment(name, date, monthAsInt, dayAsInt);
 				}
 				catch(NumberFormatException ex){
 					output.setText("Please specify a specific date not a week or weekend");
