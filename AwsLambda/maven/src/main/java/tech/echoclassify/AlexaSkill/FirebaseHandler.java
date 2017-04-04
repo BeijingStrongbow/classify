@@ -14,7 +14,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.test.Test.Main.Assignment;
 
 public class FirebaseHandler {
 
@@ -25,6 +24,8 @@ public class FirebaseHandler {
 	private DatabaseReference readPeople;
 	
 	private int points;
+	
+	private final List<String> phoneNumbers = new ArrayList<String>();
 	
 	private static FirebaseHandler instance = null;
 	
@@ -60,6 +61,18 @@ public class FirebaseHandler {
 		
 		readAssignments = FirebaseDatabase.getInstance().getReference("Assignments");
 		readPeople = FirebaseDatabase.getInstance().getReference("People");
+		
+		readPeople.addListenerForSingleValueEvent(new ValueEventListener(){
+
+			public void onCancelled(DatabaseError arg0) {}
+
+			public void onDataChange(DataSnapshot data) {
+				for(DataSnapshot s : data.getChildren()){
+					phoneNumbers.add(s.child("phoneNumber").getValue().toString());
+				}
+			}
+			
+		});
 	}
 	
 	private static class Assignment{
@@ -106,6 +119,10 @@ public class FirebaseHandler {
 						points = 100;
 					}
 					
+					if(points > 90){
+						Texting.sendGoodMessage(name, Integer.toString(points), person.child("phoneNumber").getValue().toString());
+					}
+					
 					person.getRef().child("points").setValue(points);
 				}
 				else{
@@ -148,6 +165,10 @@ public class FirebaseHandler {
 					
 					if(points < 0){
 						points = 0;
+					}
+					
+					if(points < 10){
+						Texting.sendBadMessage(name, Integer.toString(points), person.child("phoneNumber").getValue().toString());
 					}
 					
 					person.getRef().child("points").setValue(points);
@@ -201,6 +222,16 @@ public class FirebaseHandler {
 	 */
 	private void _addAssignment(int dayDue, String monthDue, String timeDue, String name){
 		pushAssignments.setValue(new Assignment(dayDue, monthDue, timeDue, processAssignmentName(name)));
+		String due;
+		
+		if(timeDue != "00:00"){
+			due = monthDue + " " + dayDue + " at " + timeDue;
+		}
+		else{
+			due = monthDue + " " + dayDue;
+		}
+		
+		Texting.sendAssignmentTexts(name, due, phoneNumbers);
 	}
 	
 	/**
@@ -226,6 +257,7 @@ public class FirebaseHandler {
 					if(s.child("title").getValue().toString().toLowerCase().equals(processAssignmentName(name).toLowerCase())){
 						toReturn = true;
 						snapshot.getRef().child(s.getKey()).setValue(null);
+						Texting.sendAssignmentTexts(name, null, phoneNumbers);
 						latch.countDown();
 					}
 				}
