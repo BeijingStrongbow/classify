@@ -122,7 +122,7 @@ public class FirebaseHandler {
 					points = 100;
 				}
 				
-				if(points > 90){
+				if(points >= 90){
 					Texting.sendGoodMessage(name, Integer.toString(points), person.child("phoneNumber").getValue().toString());
 				}
 				
@@ -162,11 +162,11 @@ public class FirebaseHandler {
 				points = Integer.parseInt(person.child("points").getValue().toString());
 				points -= numPoints;
 				
-				if(points < 100){
+				if(points < 0){
 					points = 0;
 				}
 				
-				if(points < 10){
+				if(points <= 10){
 					Texting.sendBadMessage(name, Integer.toString(points), person.child("phoneNumber").getValue().toString());
 				}
 				
