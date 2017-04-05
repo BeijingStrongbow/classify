@@ -1,4 +1,4 @@
-C:\Users\ericd\workspace\AlexaSkill\src\main\java\tech\echoclassify\AlexaSkill\SpeechletRequestHandler.java
-C:\Users\ericd\workspace\AlexaSkill\src\main\java\tech\echoclassify\AlexaSkill\ClassifySpeechlet.java
-C:\Users\ericd\workspace\AlexaSkill\src\main\java\tech\echoclassify\AlexaSkill\FirebaseHandler.java
-C:\Users\ericd\workspace\AlexaSkill\src\main\java\tech\echoclassify\AlexaSkill\Texting.java
+C:\Users\ericd\workspace\AlexaSkill\src\main\java\com\classify_kstate\classify\ClassifySpeechlet.java
+C:\Users\ericd\workspace\AlexaSkill\src\main\java\com\classify_kstate\classify\FirebaseHandler.java
+C:\Users\ericd\workspace\AlexaSkill\src\main\java\com\classify_kstate\classify\Texting.java
+C:\Users\ericd\workspace\AlexaSkill\src\main\java\com\classify_kstate\classify\SpeechletRequestHandler.java
